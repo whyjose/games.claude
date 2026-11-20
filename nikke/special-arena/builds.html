@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Special Arena Builds</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* VOICE: a field manual for one player's arena roster, terse and tactical.
+   IDEA: the in-game Squad Formation screen, turned into a loadout sheet.
+   PICTURE: the five-slot formation strip with burst + element, each slot opening its build card.
+   COLOUR and TYPE: graphite ground, NIKKE pink accent, the game's own element colours; Chakra Petch + IBM Plex Sans.
+   LAYOUT: team tabs, formation strip, then one build card per unit; search across all teams. */
+:root{color-scheme:light dark;--bg:light-dark(#f4f4f6,#121317);--panel:light-dark(#fff,#1b1d23);--line:light-dark(#dcdde3,#2c2f38);--ink:light-dark(#15161a,#eceef3);--mute:light-dark(#5b5f6b,#9aa0ad);--acc:#ff2d75;--accs:light-dark(#ffe3ec,#3a1424);
+--fire:#e5483b;--water:#2d7fe0;--wind:#2fae5c;--electric:#9a4ce6;--iron:#e08a1e}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 "IBM Plex Sans",system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3,.tab,.slot b,.chip{font-family:"Chakra Petch","IBM Plex Sans",sans-serif}
+.band{padding:clamp(20px,3.5vw,48px) max(5vw,16px);max-width:1240px;margin:auto}
+header.band{padding-bottom:8px}
+h1{font-size:clamp(32px,5vw,48px);line-height:1.05;margin:0 0 8px;text-wrap:balance}
+.lead{color:var(--mute);margin:0;max-width:68ch}
+.bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:18px}
+.tabs{display:flex;flex-wrap:wrap;gap:6px}
+.tab{min-height:44px;padding:8px 14px;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:6px;font-size:15px;font-weight:600;cursor:pointer}
+.tab[aria-selected=true]{background:var(--acc);border-color:var(--acc);color:#fff}
+.tab:focus-visible,input:focus-visible,.slot:focus-visible,button:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+input[type=search]{min-height:44px;font:16px "IBM Plex Sans",sans-serif;padding:8px 12px;border:1px solid var(--line);border-radius:6px;background:var(--panel);color:var(--ink);flex:1 1 220px;max-width:340px}
+.teamhead{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:baseline}
+h2{font-size:28px;margin:0}
+.where{color:var(--mute);font-size:15px}
+.strip{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin:16px 0 26px}
+.slot{all:unset;cursor:pointer;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px;display:grid;gap:6px;position:relative;overflow:hidden;min-height:132px}
+.slot::after{content:"";position:absolute;inset:auto 0 0 0;height:5px;background:var(--el)}
+.slot .p{font-size:13px;color:var(--mute)}
+.slot b{font-size:17px;line-height:1.15}
+.slot .bn{font:700 34px/1 "Chakra Petch",sans-serif;color:var(--el);opacity:.9}
+.slot.done{opacity:.55}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,360px),1fr));gap:14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px;display:grid;gap:12px;align-content:start;scroll-margin-top:16px}
+.card.hit{box-shadow:0 0 0 3px var(--acc)}
+.ch{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+h3{font-size:22px;margin:0;line-height:1.1}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.chip{font-size:13px;font-weight:600;padding:2px 8px;border-radius:4px;background:var(--bg);border:1px solid var(--line);white-space:nowrap}
+.chip.el{color:#fff;border-color:transparent;background:var(--el)}
+.chip.pvp{background:var(--accs);border-color:transparent;color:light-dark(#a3003d,#ff9fbf)}
+.row{display:grid;grid-template-columns:6.5em minmax(0,1fr);gap:10px;border-top:1px solid var(--line);padding-top:10px}
+.row>span{font-size:13px;font-weight:600;color:var(--mute);padding-top:2px}
+.row p{margin:0}
+.row ul{margin:0;padding-left:1.1em}
+.src{font-size:13px;color:var(--mute)}
+.src a{color:inherit}
+.tag{display:inline-block;font-size:12px;font-weight:600;padding:0 6px;border-radius:3px;margin-left:4px;vertical-align:1px;border:1px solid var(--line);color:var(--mute);white-space:nowrap}
+.warn{background:light-dark(#fff4e0,#33260f);border:1px solid light-dark(#f0c87a,#6a4e1c);border-radius:8px;padding:10px 12px;font-size:15px}
+label.done{display:flex;gap:8px;align-items:center;font-size:14px;color:var(--mute);cursor:pointer;min-height:44px}
+label.done input{width:20px;height:20px;accent-color:var(--acc)}
+.rules{display:grid;gap:12px;max-width:820px}
+.rules .card p{margin:0}
+.empty{color:var(--mute);padding:20px 0}
+footer{color:var(--mute);font-size:14px}
+footer a{color:inherit}
+@media(max-width:600px){.strip{grid-template-columns:repeat(5,minmax(96px,1fr));overflow-x:auto;padding-bottom:6px}.row{grid-template-columns:1fr;gap:2px}}
+@media(prefers-reduced-motion:no-preference){.card.hit{transition:box-shadow .3s}}
+</style>
+</head>
+<body>
+<header class="band">
+<h1>Special Arena builds</h1>
+<p class="lead">Cube, Overload lines, skill levels and notes for every Nikke in your three defense and three attack teams. Each line is tagged with where it comes from: <span class="tag">Prydwen</span>, <span class="tag">Other guide</span> or <span class="tag">General rule</span>.</p>
+<div class="bar">
+<div class="tabs" role="tablist" id="tabs"></div>
+<input type="search" id="q" placeholder="Find a unit, e.g. Biscuit" aria-label="Find a unit">
+</div>
+</header>
+<main class="band" id="view" style="padding-top:12px"></main>
+<footer class="band">Checked 20 Nov 2026. Main source: <a href="https://prydwen.gg/nikke/tier-list">Prydwen</a> character pages and its <a href="https://prydwen.gg/nikke/guides/overload-gear-recommendations">Overload guide</a>. Scarlet: Goddeath and Marian: Queen came out this month and Prydwen hasn't reviewed them, so their builds come from <a href="https://www.ldshop.gg/blog/goddess-of-victory-nikke/nikke-scarlet-goddeath.html">LDShop</a> and <a href="https://www.oslink.io/ja/blog/guide/goddess-of-victory-nikke-marian-queen-build-guide.html">OSLink</a>. Ticks are saved in this browser only.</footer>
+
+<script>
+{
+const P='Prydwen',O='Other guide',R='General rule';
+const pry=s=>'https://prydwen.gg/nikke/characters/'+s;
+const U={
+blanc:{n:'Blanc',b:'B2',el:'wind',w:'AR',c:'Defender',pvp:'PvP SS',src:pry('blanc'),
+ cube:[['Vigor or Healing Cube (with Wingman), Tempering (relic), or Endurance',P]],
+ ol:[['Prydwen lists no Overload lines. As your P1 tank, Overload is mostly CP padding: keep ATK / Elemental Damage, don’t chase rerolls.',R]],
+ sk:[['Prydwen’s skill table didn’t load. Level Burst first: it’s her team heal and protection.',R]],
+ notes:[['P1 takes the opening hits, so stack Damage Reduction on her doll.',R]]},
+sgd:{n:'Scarlet: Goddeath',b:'B3',el:'fire',w:'AR',c:'Attacker',pvp:'Not rated yet',src:'https://www.ldshop.gg/blog/goddess-of-victory-nikke/nikke-scarlet-goddeath.html',
+ cube:[['Resilience. Alternatives: Destruction, Bastion. Not Quantum.',O]],
+ ol:[['ATK and Critical Damage first (3–4 lines each), then Elemental Damage (2–4)',O],['Max Ammo 0–1 line',O]],
+ avoid:'Crit Rate (she’s near 100% crit during Burst), Hit Rate, DEF',
+ sk:[['Burst and her Crit/Pierce skill to 7 on a budget, 10 when you can. Budget 7/7/7.',O]],
+ notes:[['Prydwen hasn’t reviewed her, so her PvP value is untested. Grave is her best partner (ATK + Pierce Damage buff).',O]]},
+grave:{n:'Grave',b:'B2',el:'fire',w:'AR',c:'Supporter',pvp:'PvP 3/10',src:pry('grave'),
+ cube:[['No cube named. Use your highest-level one, Bastion preferred.',P]],
+ ol:[['4× Elemental Damage, 4× ATK, 4× Crit Damage',P],['Filler: 1–2× Max Ammo',P]],
+ avoid:'Crit Rate',
+ sk:[['PvP: 4/4/4 → 4/4/7 → 4/4/10 → 4/7/10. Max Burst first.',P]],
+ notes:[['“Good B2 buffer with some personal damage.” Overload your DPS before her.',P]]},
+helm:{n:'Helm (Favorite Item)',b:'B3',el:'water',w:'SR',pvp:'Meta OL priority',src:'https://prydwen.gg/nikke/guides/overload-gear-recommendations',
+ cube:[['Resilience: it helps her last-bullet mechanic',P]],
+ ol:[['4× Elemental Damage, 4× ATK',P],['Filler: Crit Rate/Damage, Charge Speed, 1× Max Ammo (one roll helps burst gen)',P]],
+ avoid:'More Max Ammo, unless you play her manually with Quick Scope',
+ sk:[['Prydwen doesn’t list levels for her.',P]],
+ notes:[['“The best Treasure unit” — worth full investment.',P]]},
+jackal:{n:'Jackal',b:'B1',el:'iron',w:'RL',pvp:'Queen of PvP',src:pry('jackal'),
+ cube:[['Quantum (faster burst). Vigor if she keeps dying.',P]],
+ ol:[['No unit list. Elemental Damage is valued on Iron PvP units.',P]],
+ sk:[['Prydwen gives no order. Her value is burst gen, not skill levels, so she’s low priority.',R]],
+ notes:[['“The best tank + burst battery in PvP” — fits in almost every team.',P]]},
+noah:{n:'Noah',b:'B2',el:'wind',w:'RL',c:'Defender',pvp:'PvP 10/10',src:pry('noah'),
+ cube:[['Adjutant: she reaches full charge faster',P]],
+ ol:[['CP padding plus a little survivability. No lines needed.',P]],
+ sk:[['Prydwen gives no levels. Her Burst (3 s team invincibility) works at any level.',R]],
+ notes:[['Sits in P1/P2, so her doll needs Damage Reduction.',P]]},
+noise:{n:'Noise',b:'B1',el:'electric',w:'RL',c:'Defender',pvp:'PvP 10/10',src:pry('noise'),
+ cube:[['Healing Cube',P]],
+ ol:[['No list. Any lines are fine for CP.',P]],
+ avoid:'Max Ammo: she must reload to refresh her Max HP buff and self-heal',
+ sk:[['Prydwen gives no order.',P]],
+ notes:[['Doll gives a team Max HP boost, great with Cinderella. Best in P1/P2.',P]]},
+cinderella:{n:'Cinderella',b:'B3',el:'electric',w:'RL',c:'Defender',pvp:'PvP 10/10',src:pry('cinderella'),
+ cube:[['No PvP cube named. Pick a damage cube: Resilience or Bastion.',P]],
+ ol:[['Essential: 1× Max Ammo',P],['4× Elemental Damage, 4× ATK',P],['Filler: 1–3× Crit Rate/Damage',P]],
+ sk:[['PvP: 4/4/4 → 7/4/7 → 10/4/10 → 10/7/10. Skill 1 turns her HP into ATK, so it comes first.',P]],
+ notes:[['Her PvP value scales with her own stats: damage decides whether she wipes.',P]]},
+biscuit:{n:'Biscuit',b:'B2',el:'electric',w:'RL',pvp:'PvP 10/10',src:pry('biscuit'),
+ cube:[['Adjutant (burst before the enemy). Vigor to survive Scarlet nukes.',P]],
+ ol:[['4× Elemental Damage, 4× ATK, 2–4× Charge Speed',P],['Filler: 0–2× Max Ammo',P]],
+ sk:[['PvP: 4/4/4 → 4/4/7 → 4/4/10',P]],
+ notes:[['Her immunity only protects a Defender ally under 50% HP, for 5 s, twice per battle. Dies fast to Laplace Treasure splash.',P]]},
+rumani:{n:'Rumani',b:'B1',el:'fire',w:'Clip RL',c:'Defender',pvp:'PvP 8/10',src:pry('rumani'),
+ cube:[['Quantum. Alternatives: Tempering, Vigor, Adjutant.',P]],
+ ol:[['Ideal: 4× Charge Speed',P],['Passable: ATK, Elemental Damage, DEF',P]],
+ sk:[['Stop at 4/4/4. Anything above is only CP.',P]],
+ notes:[['“The only B1 Clip RL aside from Jackal.” Taunts during Burst, pairs well with Biscuit.',P]]},
+moran:{n:'Moran',b:'B1',el:'electric',w:'AR',c:'Defender',pvp:'PvP 10/10',src:pry('moran'),
+ cube:[['Tempering — Prydwen says it may be required',P]],
+ ol:[['No list. Lines are CP padding for a tank.',R]],
+ sk:[['PvP: 4/4/4 → 4/7/7 → 4/7/10',P]],
+ notes:[['Her kit relies on stacking Damage Reduction: give her a DR doll.',P]]},
+bay:{n:'Bay',b:'B2',el:'fire',w:'RL',c:'Defender',pvp:'PvP S',src:pry('bay'),
+ cube:[['Vigor: more Max HP to absorb hits',P]],
+ ol:[['No list. CP padding only.',R]],
+ sk:[['Prydwen gives no levels.',P]],
+ notes:[['Blocks instant AoE nukes like Scarlet’s, but relies on cover and is weak to pierce, splash and slow-charging nukes.',P]]},
+sbs:{n:'Scarlet: Black Shadow',b:'B3',el:'wind',w:'RL',c:'Attacker',pvp:'PvP 9/10',src:pry('scarlet-black-shadow'),
+ cube:[['Resilience for PvP (Bastion only with Alice on the team)',P]],
+ ol:[['1× Max Ammo, 1× Charge Speed above 5%, 4× Elemental Damage, 4× ATK',P],['Filler: more Charge Speed',P]],
+ sk:[['Prydwen’s PvP levels didn’t load. She’s a main DPS: aim for 10/10/10, Skill 1 and Burst first.',R]],
+ notes:[['“If enemy has no Biscuit, she’s powerful.” Sakura also counters her. Needs Damage Reduction.',P]]},
+alice:{n:'Alice',b:'B3',el:'fire',w:'SR',pvp:'PvP 4/10',src:pry('alice'),
+ cube:[['Bastion once she has enough Max Ammo lines, Resilience before that',P]],
+ ol:[['About 3× Max Ammo (her Burst reloads a lot)',P],['Charge Speed until skills + OL reach over 99%',P]],
+ sk:[['Prydwen gives no PvP levels. Skill 1 and Burst carry her Charge Speed.',P]],
+ notes:[['“Frontline pressurers are becoming less and less reliable.” Privaty may be the better pick here.',P]]},
+anis:{n:'Anis',b:'B2',el:'iron',w:'RL',c:'Defender',pvp:'PvP SS',src:pry('anis'),
+ cube:[['Quantum — “allows you to burst faster than enemy”',P]],
+ ol:[['No list for original Anis. Not worth Overloading beyond CP.',R]],
+ sk:[['Prydwen’s table didn’t load.',P]],
+ warn:'Prydwen lists Anis as B2 Iron, but your Squad 3 P5 shows B1 Electric. That’s probably a different Nikke — tell me who and I’ll swap in her build.',
+ notes:[['Part of the PvP meta as a burst battery.',P]]},
+rapunzel:{n:'Rapunzel',b:'B1',el:'iron',w:'RL',pvp:'',src:pry('rapunzel'),
+ cube:[['Her Prydwen page wouldn’t load. She’s a revive/heal support: a survival cube (Vigor) is the safe pick.',R]],
+ ol:[['CP padding. No specific lines.',R]],
+ sk:[['Burst (revive) first.',R]],
+ warn:'Not verified: Prydwen’s Rapunzel page failed to load twice.'},
+crown:{n:'Crown',b:'B2',el:'iron',w:'MG',c:'Defender',pvp:'PvP 5/10',src:pry('crown'),
+ cube:[['Resilience (Bastion is generally good on MGs)',P]],
+ ol:[['2× Max Ammo, 4× Elemental Damage, 4× ATK',P],['Filler: Crit Rate, Crit Damage, Max Ammo',P]],
+ sk:[['Skill 1 to 10 first, then Burst 7–10, Skill 2 7–10',P]],
+ notes:[['Very high OL priority for PvE. Her ATK buff only hits units that use their Burst.',P]]},
+redhood:{n:'Rapi: Red Hood',b:'B3',el:'fire',w:'SR',pvp:'PvP 5/10',src:pry('red-hood'),
+ cube:[['Bastion (Full Charge route) or Resilience (Quick Scope route)',P]],
+ ol:[['1+ Max Ammo and ATK first; Elemental Damage is situational',P],['Charge Speed over Charge Damage',P]],
+ sk:[['4/4/4 → 7/7/7 → 10/10/10',P]],
+ notes:[['Can Burst at any stage. Easily countered by Biscuit.',P]]},
+marian:{n:'Marian: Queen',b:'B3',el:'fire',w:'MG',c:'Attacker',pvp:'Not rated yet',src:'https://www.oslink.io/ja/blog/guide/goddess-of-victory-nikke-marian-queen-build-guide.html',
+ cube:[['No guide gives a PvP cube yet. Bastion is the usual MG pick.',R]],
+ ol:[['ATK, Max Ammo, Crit Damage',O]],
+ sk:[['No reliable levels yet. Prydwen hasn’t reviewed her.',P]],
+ notes:[['Throwaway team: don’t spend PvP-only resources on her.',R]]},
+mermaid:{n:'Little Mermaid',b:'B1',el:'wind',w:'SMG',c:'Supporter',pvp:'',src:'https://dotgg.gg/nikke/characters/little-mermaid',
+ cube:[['No PvP cube found. She’s a buffer with Burst cooldown reduction.',R]],
+ ol:[['No lines found. Treat as CP padding.',R]],
+ sk:[['No source found.',R]],
+ notes:[['Throwaway team: low investment priority.',R]]}
+};
+const T=[
+ {id:'sgd',label:'SGD',name:'SGD Pierce',where:'Defense Squad 1 and Attack Round 1 (same five units)',u:['blanc','sgd','grave','helm','jackal']},
+ {id:'stall',label:'Stall',name:'Stall',where:'Defense Squad 2',u:['noah','noise','cinderella','biscuit','rumani']},
+ {id:'sbs-def',label:'SBS defense',name:'SBS Nuke',where:'Defense Squad 3',u:['moran','bay','sbs','alice','anis']},
+ {id:'sbs-atk',label:'SBS attack',name:'SBS Counter',where:'Attack Round 2 — send at the team without Biscuit',u:['noah','biscuit','sbs','rapunzel','rumani']},
+ {id:'throwaway',label:'Throwaway',name:'Throwaway',where:'Attack Round 3 — Noise goes in P1',u:['noise','crown','redhood','marian','mermaid']},
+ {id:'rules',label:'Rules',name:'General PvP rules'}
+];
+const ELN={fire:'Fire',water:'Water',wind:'Wind',electric:'Electric',iron:'Iron'};
+let done={};try{done=JSON.parse(localStorage.getItem('nikke-done')||'{}')}catch(e){}
+const save=()=>{try{localStorage.setItem('nikke-done',JSON.stringify(done))}catch(e){}};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const lines=a=>a.length>1?'<ul>'+a.map(([t,s])=>`<li>${esc(t)}<span class="tag">${s}</span></li>`).join('')+'</ul>':a.map(([t,s])=>`<p>${esc(t)}<span class="tag">${s}</span></p>`).join('');
+const others=(k,tid)=>T.filter(t=>t.u&&t.id!==tid&&t.u.includes(k)).map(t=>t.label);
+const card=(k,tid,pos)=>{const x=U[k],also=others(k,tid);return `<article class="card" id="u-${k}" style="--el:var(--${x.el})">
+<div class="ch"><div>${pos?`<div class="src">P${pos}</div>`:''}<h3>${esc(x.n)}</h3><div class="chips"><span class="chip">${x.b}</span><span class="chip el">${ELN[x.el]}</span><span class="chip">${x.w}</span>${x.c?`<span class="chip">${x.c}</span>`:''}${x.pvp?`<span class="chip pvp">${esc(x.pvp)}</span>`:''}</div></div>
+<label class="done"><input type="checkbox" data-k="${k}" ${done[k]?'checked':''}>Built</label></div>
+${x.warn?`<div class="warn">${esc(x.warn)}</div>`:''}
+<div class="row"><span>Cube</span><div>${lines(x.cube)}</div></div>
+<div class="row"><span>Overload</span><div>${lines(x.ol)}${x.avoid?`<p><b>Avoid:</b> ${esc(x.avoid)}</p>`:''}</div></div>
+<div class="row"><span>Skills</span><div>${lines(x.sk)}</div></div>
+${x.notes?`<div class="row"><span>Notes</span><div>${lines(x.notes)}</div></div>`:''}
+<div class="src">${also.length?'Also in: '+also.join(', ')+' · ':''}<a href="${x.src}">Source</a></div></article>`};
+const rules=[
+ ['Burst order','Every team needs at least one B1, one B2 and one B3, or it never reaches Full Burst.'],
+ ['Faster burst wins','On defense, aim for at least two teams at 3RL or faster. On attack, match or outspeed the enemy team. Quantum Cube on batteries (Jackal, Rumani, Anis) speeds this up.'],
+ ['P1 and P2 take the hits','Tanks there (Blanc, Noah, Noise, Moran, Bay) want Damage Reduction from their doll, plus Vigor, Tempering or Healing cubes.'],
+ ['Overload on tanks is CP','For Defenders and batteries, Overload mainly pads CP. Spend rerolls on your carries: Scarlet: Goddeath, SBS, Cinderella, Helm.'],
+ ['Watch Max Ammo','Units that need to reload for their buffs (Noise) should not roll Max Ammo. Carries like SBS and Cinderella want exactly one line.'],
+ ['No repeats per side','Each Nikke can be used once across your three defense teams and once across your three attack teams. Attack and defense can share units.']
+];
+const tabs=document.getElementById('tabs'),view=document.getElementById('view'),q=document.getElementById('q');
+tabs.innerHTML=T.map(t=>`<button class="tab" role="tab" data-id="${t.id}" aria-selected="false">${t.label}</button>`).join('');
+const render=id=>{
+ const t=T.find(x=>x.id===id)||T[0];
+ tabs.querySelectorAll('.tab').forEach(b=>b.setAttribute('aria-selected',b.dataset.id===t.id));
+ if(!t.u){view.innerHTML=`<div class="teamhead"><h2>${t.name}</h2><span class="where">Applies to every team</span></div><div class="rules" style="margin-top:16px">${rules.map(([h,p])=>`<div class="card"><h3>${h}</h3><p>${p}</p></div>`).join('')}</div>`;return}
+ view.innerHTML=`<div class="teamhead"><h2>${t.name}</h2><span class="where">${t.where}</span></div>
+<div class="strip">${t.u.map((k,i)=>{const x=U[k];return `<button class="slot${done[k]?' done':''}" style="--el:var(--${x.el})" data-go="${k}"><span class="p">P${i+1} · ${ELN[x.el]}</span><span class="bn">${x.b}</span><b>${esc(x.n)}</b></button>`}).join('')}</div>
+<div class="grid">${t.u.map((k,i)=>card(k,t.id,i+1)).join('')}</div>`;
+};
+const search=s=>{
+ s=s.trim().toLowerCase();if(!s){route();return}
+ const ks=Object.keys(U).filter(k=>U[k].n.toLowerCase().includes(s));
+ tabs.querySelectorAll('.tab').forEach(b=>b.setAttribute('aria-selected','false'));
+ view.innerHTML=`<div class="teamhead"><h2>Search</h2><span class="where">${ks.length} unit${ks.length===1?'':'s'}</span></div>`+(ks.length?`<div class="grid" style="margin-top:16px">${ks.map(k=>card(k,'')).join('')}</div>`:`<p class="empty">No unit matches “${esc(s)}”.</p>`);
+};
+const route=()=>render((location.hash||'').slice(1));
+tabs.addEventListener('click',e=>{const b=e.target.closest('.tab');if(!b)return;q.value='';if(location.hash==='#'+b.dataset.id)route();else location.hash=b.dataset.id});
+view.addEventListener('click',e=>{const s=e.target.closest('[data-go]');if(!s)return;const c=document.getElementById('u-'+s.dataset.go);if(!c)return;c.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth',block:'start'});c.classList.add('hit');setTimeout(()=>c.classList.remove('hit'),1400)});
+view.addEventListener('change',e=>{const k=e.target.dataset&&e.target.dataset.k;if(!k)return;done[k]=e.target.checked;save();document.querySelectorAll(`[data-go="${k}"]`).forEach(s=>s.classList.toggle('done',done[k]));document.querySelectorAll(`input[data-k="${k}"]`).forEach(i=>i.checked=done[k])});
+q.addEventListener('input',()=>search(q.value));
+window.addEventListener('hashchange',()=>{q.value='';route()});
+route();
+}
+</script>
+</body>
+</html>
