@@ -21,3 +21,7 @@ Current rank: Diamond 5 (Special Arena).
 ## Resolved
 
 - 2026-11-20: Scarlet: Goddeath confirmed PvP 10/10 on Prydwen. All 20 unit builds re-checked against Prydwen's Investment tips in the browser.
+
+## Gear progress
+
+- 2026-11-20 · Scarlet: Goddeath Overload (helmet, Lv 5): rerolled from Elemental Damage 23.56% / – / – to ATK 5.47% + Elemental Damage 22.15% / –. Took the new roll: two target lines beat one. ATK value is low; third line still open.
