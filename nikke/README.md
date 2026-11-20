@@ -15,6 +15,9 @@ Current rank: Diamond 5 (Special Arena).
 
 ## Open questions
 
-- Scarlet: Goddeath's PvP strength is unconfirmed: Prydwen hadn't reviewed her as of 2026-11-20. Watch Defense Squad 1; if it keeps losing, move her to attack only.
-- Defense Squad 3, P5 is listed as Anis, but the unit in-game shows B1 Electric while Prydwen lists Anis as B2 Iron. Confirm which Nikke it is.
-- Rapunzel's build is unverified (Prydwen page failed to load).
+- Defense Squad 3, P5 is listed as Anis, but the unit in-game shows B1 Electric while Prydwen lists Anis as an Iron Defender. Confirm which Nikke it is.
+- Marian: Queen is PvP 8/10 on Prydwen (breaks stalls). She may deserve a real team instead of the throwaway.
+
+## Resolved
+
+- 2026-11-20: Scarlet: Goddeath confirmed PvP 10/10 on Prydwen. All 20 unit builds re-checked against Prydwen's Investment tips in the browser.

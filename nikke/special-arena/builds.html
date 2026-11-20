@@ -51,6 +51,7 @@ h3{font-size:22px;margin:0;line-height:1.1}
 .row>span{font-size:13px;font-weight:600;color:var(--mute);padding-top:2px}
 .row p{margin:0}
 .row ul{margin:0;padding-left:1.1em}
+.pick{border-top:1px solid var(--line);padding-top:10px;display:grid;grid-template-columns:6.5em minmax(0,1fr);column-gap:10px}.pick>span{font-size:13px;font-weight:600;color:var(--mute);padding-top:4px;grid-row:span 3}.pick b{font:700 22px/1.2 'Chakra Petch',sans-serif;color:var(--acc)}.pick p{margin:2px 0}.pick small,.mute{color:var(--mute);font-size:14px}
 .src{font-size:13px;color:var(--mute)}
 .src a{color:inherit}
 .tag{display:inline-block;font-size:12px;font-weight:600;padding:0 6px;border-radius:3px;margin-left:4px;vertical-align:1px;border:1px solid var(--line);color:var(--mute);white-space:nowrap}
@@ -62,132 +63,101 @@ label.done input{width:20px;height:20px;accent-color:var(--acc)}
 .empty{color:var(--mute);padding:20px 0}
 footer{color:var(--mute);font-size:14px}
 footer a{color:inherit}
-@media(max-width:600px){.strip{grid-template-columns:repeat(5,minmax(96px,1fr));overflow-x:auto;padding-bottom:6px}.row{grid-template-columns:1fr;gap:2px}}
+@media(max-width:600px){.pick{grid-template-columns:1fr}.pick>span{grid-row:auto}.strip{grid-template-columns:repeat(5,minmax(96px,1fr));overflow-x:auto;padding-bottom:6px}.row{grid-template-columns:1fr;gap:2px}}
 @media(prefers-reduced-motion:no-preference){.card.hit{transition:box-shadow .3s}}
 </style>
 </head>
 <body>
 <header class="band">
 <h1>Special Arena builds</h1>
-<p class="lead">Cube, Overload lines, skill levels and notes for every Nikke in your three defense and three attack teams. Each line is tagged with where it comes from: <span class="tag">Prydwen</span>, <span class="tag">Other guide</span> or <span class="tag">General rule</span>.</p>
+<p class="lead">Cube, Overload lines, PvP skill levels and doll for every Nikke in your three defense and three attack teams, from Prydwen’s Investment tips. Where Prydwen offers several cubes, each card picks one for this team and says why.</p>
 <div class="bar">
 <div class="tabs" role="tablist" id="tabs"></div>
 <input type="search" id="q" placeholder="Find a unit, e.g. Biscuit" aria-label="Find a unit">
 </div>
 </header>
 <main class="band" id="view" style="padding-top:12px"></main>
-<footer class="band">Checked 20 Nov 2026. Main source: <a href="https://prydwen.gg/nikke/tier-list">Prydwen</a> character pages and its <a href="https://prydwen.gg/nikke/guides/overload-gear-recommendations">Overload guide</a>. Scarlet: Goddeath and Marian: Queen came out this month and Prydwen hasn't reviewed them, so their builds come from <a href="https://www.ldshop.gg/blog/goddess-of-victory-nikke/nikke-scarlet-goddeath.html">LDShop</a> and <a href="https://www.oslink.io/ja/blog/guide/goddess-of-victory-nikke-marian-queen-build-guide.html">OSLink</a>. Ticks are saved in this browser only.</footer>
+<footer class="band">Checked on Prydwen character pages, 20 Nov 2026. The cube pick and its reason are my call based on the team; everything else is Prydwen’s. Ticks are saved in this browser only.</footer>
 
 <script>
 {
-const P='Prydwen',O='Other guide',R='General rule';
 const pry=s=>'https://prydwen.gg/nikke/characters/'+s;
+const DR='Damage Reduction';
 const U={
-blanc:{n:'Blanc',b:'B2',el:'wind',w:'AR',c:'Defender',pvp:'PvP SS',src:pry('blanc'),
- cube:[['Vigor or Healing Cube (with Wingman), Tempering (relic), or Endurance',P]],
- ol:[['Prydwen lists no Overload lines. As your P1 tank, Overload is mostly CP padding: keep ATK / Elemental Damage, don’t chase rerolls.',R]],
- sk:[['Prydwen’s skill table didn’t load. Level Burst first: it’s her team heal and protection.',R]],
- notes:[['P1 takes the opening hits, so stack Damage Reduction on her doll.',R]]},
-sgd:{n:'Scarlet: Goddeath',b:'B3',el:'fire',w:'AR',c:'Attacker',pvp:'Not rated yet',src:'https://www.ldshop.gg/blog/goddess-of-victory-nikke/nikke-scarlet-goddeath.html',
- cube:[['Resilience. Alternatives: Destruction, Bastion. Not Quantum.',O]],
- ol:[['ATK and Critical Damage first (3–4 lines each), then Elemental Damage (2–4)',O],['Max Ammo 0–1 line',O]],
- avoid:'Crit Rate (she’s near 100% crit during Burst), Hit Rate, DEF',
- sk:[['Burst and her Crit/Pierce skill to 7 on a budget, 10 when you can. Budget 7/7/7.',O]],
- notes:[['Prydwen hasn’t reviewed her, so her PvP value is untested. Grave is her best partner (ATK + Pierce Damage buff).',O]]},
+blanc:{n:'Blanc',b:'B2',el:'wind',w:'AR',c:'Defender',pvp:'PvP 10/10',src:pry('blanc'),
+ cube:'Vigor',why:'More Max HP means bigger heals and a sturdier P1. Prydwen lists it first for PvP.',alt:'Healing',
+ ideal:'None needed: Overload is CP padding only',skills:'1/1/4 → 4/4/7 → 4/4/10 (Burst first)',doll:DR+': she sits near P1 and eats the opening hits'},
+sgd:{n:'Scarlet: Goddeath',b:'B3',el:'fire',w:'AR',c:'Attacker',pvp:'PvP 10/10',src:pry('scarlet-goddeath'),
+ cube:'Tempering',why:'Prydwen wants Damage Taken Reduction on her in PvP, and Tempering is the survival pick. Resilience is her PvE cube, not PvP.',alt:'Vigor',
+ ideal:'4× Elemental Damage, 4× ATK',filler:'Crit Damage over Crit Rate: Grave buffs Pierce, and Pierce favours Crit Damage',
+ skills:'4/4/4 → 4/4/4 → 7/7/7 (→ 10/10/10) · Burst and Skill 1 matter most',doll:DR,
+ note:'Prydwen confirms her “Clip RL-level burst gen”, so she doubles as a burst battery.'},
 grave:{n:'Grave',b:'B2',el:'fire',w:'AR',c:'Supporter',pvp:'PvP 3/10',src:pry('grave'),
- cube:[['No cube named. Use your highest-level one, Bastion preferred.',P]],
- ol:[['4× Elemental Damage, 4× ATK, 4× Crit Damage',P],['Filler: 1–2× Max Ammo',P]],
- avoid:'Crit Rate',
- sk:[['PvP: 4/4/4 → 4/4/7 → 4/4/10 → 4/7/10. Max Burst first.',P]],
- notes:[['“Good B2 buffer with some personal damage.” Overload your DPS before her.',P]]},
-helm:{n:'Helm (Favorite Item)',b:'B3',el:'water',w:'SR',pvp:'Meta OL priority',src:'https://prydwen.gg/nikke/guides/overload-gear-recommendations',
- cube:[['Resilience: it helps her last-bullet mechanic',P]],
- ol:[['4× Elemental Damage, 4× ATK',P],['Filler: Crit Rate/Damage, Charge Speed, 1× Max Ammo (one roll helps burst gen)',P]],
- avoid:'More Max Ammo, unless you play her manually with Quick Scope',
- sk:[['Prydwen doesn’t list levels for her.',P]],
- notes:[['“The best Treasure unit” — worth full investment.',P]]},
-jackal:{n:'Jackal',b:'B1',el:'iron',w:'RL',pvp:'Queen of PvP',src:pry('jackal'),
- cube:[['Quantum (faster burst). Vigor if she keeps dying.',P]],
- ol:[['No unit list. Elemental Damage is valued on Iron PvP units.',P]],
- sk:[['Prydwen gives no order. Her value is burst gen, not skill levels, so she’s low priority.',R]],
- notes:[['“The best tank + burst battery in PvP” — fits in almost every team.',P]]},
+ cube:'Vigor',why:'She needs no special cube. Vigor keeps her alive because Blanc is this team’s only healer.',alt:'Tempering',
+ ideal:'4× Elemental Damage, 4× ATK, 4× Crit Damage',skills:'4/4/4 → 4/4/7 → 4/4/10 (→ 4/7/10) · max Burst first',doll:DR,
+ note:'Overload your DPS units before her.'},
+helm:{n:'Helm (Treasure)',b:'B3',el:'water',w:'SR',c:'Attacker',pvp:'PvP 10/10',src:pry('helm-treasure'),
+ cube:'Quantum',why:'Prydwen calls her the “best burst gen in the game”. Quantum multiplies it, so this team reaches Full Burst first.',alt:'Vigor',
+ ideal:'4× Elemental Damage, 4× ATK',filler:'Crit Rate/Damage, Charge Speed, 1× Max Ammo',avoid:'More than 1 Max Ammo, unless you manually Quick Scope',
+ skills:'4/4/4 → 7/4/4 → 10/7/7 (→ 10/10/10)'},
+jackal:{n:'Jackal',b:'B1',el:'iron',w:'RL',c:'Defender',pvp:'PvP 10/10',src:pry('jackal'),
+ cube:'Quantum',why:'Prydwen’s pick for her. With Helm on Quantum too, this is your fastest-bursting team.',alt:'Adjutant',
+ ideal:'4× Charge Speed (RLs hit Charge Speed breakpoints in PvP)',filler:'ATK, Elemental Damage, DEF',skills:'1/1/1 → 4/4/4',doll:DR},
 noah:{n:'Noah',b:'B2',el:'wind',w:'RL',c:'Defender',pvp:'PvP 10/10',src:pry('noah'),
- cube:[['Adjutant: she reaches full charge faster',P]],
- ol:[['CP padding plus a little survivability. No lines needed.',P]],
- sk:[['Prydwen gives no levels. Her Burst (3 s team invincibility) works at any level.',R]],
- notes:[['Sits in P1/P2, so her doll needs Damage Reduction.',P]]},
-noise:{n:'Noise',b:'B1',el:'electric',w:'RL',c:'Defender',pvp:'PvP 10/10',src:pry('noise'),
- cube:[['Healing Cube',P]],
- ol:[['No list. Any lines are fine for CP.',P]],
- avoid:'Max Ammo: she must reload to refresh her Max HP buff and self-heal',
- sk:[['Prydwen gives no order.',P]],
- notes:[['Doll gives a team Max HP boost, great with Cinderella. Best in P1/P2.',P]]},
+ cube:'Adjutant',why:'Prydwen calls it the “clear winner”. She reaches Full Charge faster, so team invincibility lands before the enemy nuke.',alt:'Vigor',
+ ideal:'4× Charge Speed',filler:'ATK, Elemental Damage',skills:'1/1/1 → 4/4/4',doll:DR+': she sits in P1'},
+noise:{n:'Noise',b:'B1',el:'electric',w:'RL',c:'Supporter',pvp:'PvP 10/10',src:pry('noise'),
+ cube:'Healing',why:'Prydwen’s go-to. Her job is to tank in P1/P2 and heal herself back up.',alt:'Vigor',
+ ideal:'4× Charge Speed',filler:'ATK, Elemental Damage',avoid:'Max Ammo: she must reload to refresh her Max HP buff and self-heal',
+ skills:'1/4/4 → 4/4/7 (→ 7/7/10)',doll:DR+'. Her doll also boosts her team Max HP buff, which feeds Cinderella'},
 cinderella:{n:'Cinderella',b:'B3',el:'electric',w:'RL',c:'Defender',pvp:'PvP 10/10',src:pry('cinderella'),
- cube:[['No PvP cube named. Pick a damage cube: Resilience or Bastion.',P]],
- ol:[['Essential: 1× Max Ammo',P],['4× Elemental Damage, 4× ATK',P],['Filler: 1–3× Crit Rate/Damage',P]],
- sk:[['PvP: 4/4/4 → 7/4/7 → 10/4/10 → 10/7/10. Skill 1 turns her HP into ATK, so it comes first.',P]],
- notes:[['Her PvP value scales with her own stats: damage decides whether she wipes.',P]]},
-biscuit:{n:'Biscuit',b:'B2',el:'electric',w:'RL',pvp:'PvP 10/10',src:pry('biscuit'),
- cube:[['Adjutant (burst before the enemy). Vigor to survive Scarlet nukes.',P]],
- ol:[['4× Elemental Damage, 4× ATK, 2–4× Charge Speed',P],['Filler: 0–2× Max Ammo',P]],
- sk:[['PvP: 4/4/4 → 4/4/7 → 4/4/10',P]],
- notes:[['Her immunity only protects a Defender ally under 50% HP, for 5 s, twice per battle. Dies fast to Laplace Treasure splash.',P]]},
-rumani:{n:'Rumani',b:'B1',el:'fire',w:'Clip RL',c:'Defender',pvp:'PvP 8/10',src:pry('rumani'),
- cube:[['Quantum. Alternatives: Tempering, Vigor, Adjutant.',P]],
- ol:[['Ideal: 4× Charge Speed',P],['Passable: ATK, Elemental Damage, DEF',P]],
- sk:[['Stop at 4/4/4. Anything above is only CP.',P]],
- notes:[['“The only B1 Clip RL aside from Jackal.” Taunts during Burst, pairs well with Biscuit.',P]]},
+ cube:'Vigor',why:'Her Skill 1 turns HP into ATK, and Noise buffs team Max HP. Vigor stacks on both, so she hits harder.',alt:'Bastion',
+ ideal:'4× Elemental Damage, 4× ATK, 2× Max Ammo',filler:'1–3× Crit Rate/Damage, 1–2× Max Ammo',skills:'4/4/4 → 7/4/7 → 10/4/10 (→ 10/7/10)'},
+biscuit:{n:'Biscuit',b:'B2',el:'electric',w:'RL',c:'Supporter',pvp:'PvP 10/10',src:pry('biscuit'),
+ cube:'Adjutant',why:'Prydwen: in PvP “you race to use your Bursts before the enemy”. Switch to Vigor only if Scarlet nukes keep killing her.',alt:'Vigor',
+ ideal:'4× Elemental Damage, 4× ATK, 2–4× Charge Speed',filler:'0–2× Max Ammo',skills:'1/1/1 → 4/4/4 → 4/4/7 (→ 4/4/10)',
+ note:'Her immunity only protects a Defender under 50% HP. Here that’s Noah, Cinderella or Rumani.'},
+rumani:{n:'Rumani',b:'B1',el:'fire',w:'RL',c:'Defender',pvp:'PvP 8/10',src:pry('rumani'),
+ cube:'Quantum',why:'This team has no Jackal or Helm, so Rumani is the main battery. Quantum on her speeds up the whole stall.',alt:'Adjutant',
+ ideal:'4× Charge Speed',filler:'ATK, Elemental Damage, DEF',skills:'1/1/1 → 4/4/4 · stop there',
+ note:'Taunts during Burst and works well with Biscuit.'},
 moran:{n:'Moran',b:'B1',el:'electric',w:'AR',c:'Defender',pvp:'PvP 10/10',src:pry('moran'),
- cube:[['Tempering — Prydwen says it may be required',P]],
- ol:[['No list. Lines are CP padding for a tank.',R]],
- sk:[['PvP: 4/4/4 → 4/7/7 → 4/7/10',P]],
- notes:[['Her kit relies on stacking Damage Reduction: give her a DR doll.',P]]},
-bay:{n:'Bay',b:'B2',el:'fire',w:'RL',c:'Defender',pvp:'PvP S',src:pry('bay'),
- cube:[['Vigor: more Max HP to absorb hits',P]],
- ol:[['No list. CP padding only.',R]],
- sk:[['Prydwen gives no levels.',P]],
- notes:[['Blocks instant AoE nukes like Scarlet’s, but relies on cover and is weak to pierce, splash and slow-charging nukes.',P]]},
+ cube:'Tempering',why:'Prydwen: her “kit relies on Damage Reduction stacking” and “may require Tempering Cube”.',alt:'Vigor',
+ ideal:'None needed: CP padding only',skills:'1/1/1 → 4/4/4 → 4/7/7 (→ 4/7/10)',doll:DR},
+bay:{n:'Bay',b:'B2',el:'fire',w:'RL',c:'Defender',pvp:'PvP 6/10',src:pry('bay'),
+ cube:'Vigor',why:'Prydwen calls it “the only cube for her”: she shares damage, so more Max HP means more soak.',alt:'Tempering',
+ ideal:'4× Charge Speed',filler:'ATK, Elemental Damage, DEF',skills:'1/1/1 → 4/4/4',doll:DR},
 sbs:{n:'Scarlet: Black Shadow',b:'B3',el:'wind',w:'RL',c:'Attacker',pvp:'PvP 9/10',src:pry('scarlet-black-shadow'),
- cube:[['Resilience for PvP (Bastion only with Alice on the team)',P]],
- ol:[['1× Max Ammo, 1× Charge Speed above 5%, 4× Elemental Damage, 4× ATK',P],['Filler: more Charge Speed',P]],
- sk:[['Prydwen’s PvP levels didn’t load. She’s a main DPS: aim for 10/10/10, Skill 1 and Burst first.',R]],
- notes:[['“If enemy has no Biscuit, she’s powerful.” Sakura also counters her. Needs Damage Reduction.',P]]},
-alice:{n:'Alice',b:'B3',el:'fire',w:'SR',pvp:'PvP 4/10',src:pry('alice'),
- cube:[['Bastion once she has enough Max Ammo lines, Resilience before that',P]],
- ol:[['About 3× Max Ammo (her Burst reloads a lot)',P],['Charge Speed until skills + OL reach over 99%',P]],
- sk:[['Prydwen gives no PvP levels. Skill 1 and Burst carry her Charge Speed.',P]],
- notes:[['“Frontline pressurers are becoming less and less reliable.” Privaty may be the better pick here.',P]]},
-anis:{n:'Anis',b:'B2',el:'iron',w:'RL',c:'Defender',pvp:'PvP SS',src:pry('anis'),
- cube:[['Quantum — “allows you to burst faster than enemy”',P]],
- ol:[['No list for original Anis. Not worth Overloading beyond CP.',R]],
- sk:[['Prydwen’s table didn’t load.',P]],
- warn:'Prydwen lists Anis as B2 Iron, but your Squad 3 P5 shows B1 Electric. That’s probably a different Nikke — tell me who and I’ll swap in her build.',
- notes:[['Part of the PvP meta as a burst battery.',P]]},
-rapunzel:{n:'Rapunzel',b:'B1',el:'iron',w:'RL',pvp:'',src:pry('rapunzel'),
- cube:[['Her Prydwen page wouldn’t load. She’s a revive/heal support: a survival cube (Vigor) is the safe pick.',R]],
- ol:[['CP padding. No specific lines.',R]],
- sk:[['Burst (revive) first.',R]],
- warn:'Not verified: Prydwen’s Rapunzel page failed to load twice.'},
+ cube:'Resilience',why:'Bastion only beats it with Alice on the team. SBS has Alice on defense but not in Attack Round 2, and the cube stays on her for both, so Resilience works everywhere.',alt:'Bastion',
+ ideal:'1× Max Ammo, 1× Charge Speed above 5%, 4× Elemental Damage, 4× ATK',filler:'Up to 3× more Charge Speed',skills:'4/4/4 → 7/4/7 → 10/7/10',doll:DR,
+ note:'Blocked by Biscuit. Against teams without Biscuit, she’s powerful.'},
+alice:{n:'Alice',b:'B3',el:'fire',w:'SR',c:'Attacker',pvp:'PvP 4/10',src:pry('alice'),
+ cube:'Bastion',why:'She reloads a lot during Burst. Once she has 2–3 Max Ammo lines Prydwen prefers Bastion. Use Resilience until then.',alt:'Resilience',
+ ideal:'2× Charge Speed, 3–4× ATK, 2–3× Max Ammo, 4× Elemental Damage',skills:'1/1/1 → 10/4/10',
+ note:'First goal: over 99% Charge Speed from Skill 1 + Burst + Overload.'},
+anis:{n:'Anis',b:'B?',el:'iron',w:'RL',c:'Defender',pvp:'PvP 8/10',src:pry('anis'),
+ cube:'Quantum',why:'One of Prydwen’s “Holy Trinity” Quantum units: she’s pure burst gen.',alt:'Adjutant',
+ ideal:'4× Charge Speed',filler:'ATK, Elemental Damage, DEF',skills:'1/1/1 (→ 4/4/4)',doll:DR+' and CP: she’s an SR',
+ warn:'Prydwen lists Anis as an Iron Defender, but your Squad 3 P5 shows B1 Electric. That’s probably a different Nikke. Tell me who and I’ll swap in her build.'},
+rapunzel:{n:'Rapunzel',b:'B1',el:'iron',w:'RL',c:'Supporter',pvp:'PvP 8/10',src:pry('rapunzel'),
+ cube:'Healing',why:'Prydwen’s go-to: bigger heals. Her revive doesn’t depend on the cube.',alt:'Vigor',
+ ideal:'4× Charge Speed',filler:'2–4× Max Ammo, Elemental Damage, ATK',skills:'1/1/1 → 4/4/4 (→ 7/4/4)',
+ doll:DR+' keeps her alive (less urgent: her revive doesn’t rely on it)'},
 crown:{n:'Crown',b:'B2',el:'iron',w:'MG',c:'Defender',pvp:'PvP 5/10',src:pry('crown'),
- cube:[['Resilience (Bastion is generally good on MGs)',P]],
- ol:[['2× Max Ammo, 4× Elemental Damage, 4× ATK',P],['Filler: Crit Rate, Crit Damage, Max Ammo',P]],
- sk:[['Skill 1 to 10 first, then Burst 7–10, Skill 2 7–10',P]],
- notes:[['Very high OL priority for PvE. Her ATK buff only hits units that use their Burst.',P]]},
-redhood:{n:'Rapi: Red Hood',b:'B3',el:'fire',w:'SR',pvp:'PvP 5/10',src:pry('red-hood'),
- cube:[['Bastion (Full Charge route) or Resilience (Quick Scope route)',P]],
- ol:[['1+ Max Ammo and ATK first; Elemental Damage is situational',P],['Charge Speed over Charge Damage',P]],
- sk:[['4/4/4 → 7/7/7 → 10/10/10',P]],
- notes:[['Can Burst at any stage. Easily countered by Biscuit.',P]]},
-marian:{n:'Marian: Queen',b:'B3',el:'fire',w:'MG',c:'Attacker',pvp:'Not rated yet',src:'https://www.oslink.io/ja/blog/guide/goddess-of-victory-nikke-marian-queen-build-guide.html',
- cube:[['No guide gives a PvP cube yet. Bastion is the usual MG pick.',R]],
- ol:[['ATK, Max Ammo, Crit Damage',O]],
- sk:[['No reliable levels yet. Prydwen hasn’t reviewed her.',P]],
- notes:[['Throwaway team: don’t spend PvP-only resources on her.',R]]},
-mermaid:{n:'Little Mermaid',b:'B1',el:'wind',w:'SMG',c:'Supporter',pvp:'',src:'https://dotgg.gg/nikke/characters/little-mermaid',
- cube:[['No PvP cube found. She’s a buffer with Burst cooldown reduction.',R]],
- ol:[['No lines found. Treat as CP padding.',R]],
- sk:[['No source found.',R]],
- notes:[['Throwaway team: low investment priority.',R]]}
+ cube:'Resilience',why:'Prydwen: “Always use Resilience cube on Crown” because she buffs her own reload. She’s a PvE staple, so don’t swap her cube for a throwaway team.',alt:'Vigor',
+ ideal:'2× Max Ammo, 4× Elemental Damage, 4× ATK',filler:'Crit Rate, Crit Damage, Max Ammo',skills:'4/4/4 → 7/4/7 → 10/4/10',
+ note:'Her ATK buff only hits units that use their Burst.'},
+redhood:{n:'Rapi: Red Hood',b:'B3',el:'fire',w:'MG',c:'Attacker',pvp:'PvP 5/10',src:pry('rapi-red-hood'),
+ cube:'Resilience',why:'Crown is in this team and gives Reload Speed. Prydwen says Resilience is the better choice in Crown comps. Reload just before Full Burst.',alt:'Bastion',
+ ideal:'4× Elemental Damage, 4× ATK, 2–3× Max Ammo (very important for her)',skills:'4/4/4 → 4/4/4 → 7/7/7 (→ 10/10/10)',
+ note:'Her whole-screen AoE wrecks teams with many Electric and Wind units.'},
+marian:{n:'Marian: Queen',b:'B3',el:'fire',w:'MG',c:'Attacker',pvp:'PvP 8/10',src:pry('marian-queen'),
+ cube:'Bastion',why:'The only damage cube on her PvP list. An MG wants to keep firing without reloading.',alt:'Tempering',
+ ideal:'4× Elemental Damage, 4× ATK, 1–4× Max Ammo',filler:'Crit Rate, Crit Damage',skills:'4/4/4 → 4/4/4 → 7/7/7 (→ 10/10/10) · max Skill 2 and Burst for PvP',
+ note:'She can break strong stalls like Moran + Biscuit + Helm, so she’s more than a throwaway.'},
+mermaid:{n:'Little Mermaid (Siren)',b:'B1',el:'wind',w:'SMG',c:'Supporter',pvp:'PvP 8/10',src:pry('siren'),
+ cube:'Tempering',why:'She stuns the enemy P1 and Prydwen says she may need Damage Reduction. Tempering is her first PvP pick.',alt:'Bastion',
+ ideal:'4× Elemental Damage, 4× ATK',filler:'4× Crit Rate, 4× Crit Damage, 4× Max Ammo',skills:'4/4/4 → 4/4/4 → 7/7/7 (→ 10/10/7)',doll:DR}
 };
 const T=[
  {id:'sgd',label:'SGD',name:'SGD Pierce',where:'Defense Squad 1 and Attack Round 1 (same five units)',u:['blanc','sgd','grave','helm','jackal']},
@@ -201,23 +171,23 @@ const ELN={fire:'Fire',water:'Water',wind:'Wind',electric:'Electric',iron:'Iron'
 let done={};try{done=JSON.parse(localStorage.getItem('nikke-done')||'{}')}catch(e){}
 const save=()=>{try{localStorage.setItem('nikke-done',JSON.stringify(done))}catch(e){}};
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const lines=a=>a.length>1?'<ul>'+a.map(([t,s])=>`<li>${esc(t)}<span class="tag">${s}</span></li>`).join('')+'</ul>':a.map(([t,s])=>`<p>${esc(t)}<span class="tag">${s}</span></p>`).join('');
 const others=(k,tid)=>T.filter(t=>t.u&&t.id!==tid&&t.u.includes(k)).map(t=>t.label);
+const row=(l,v)=>v?`<div class="row"><span>${l}</span><div><p>${esc(v)}</p></div></div>`:'';
 const card=(k,tid,pos)=>{const x=U[k],also=others(k,tid);return `<article class="card" id="u-${k}" style="--el:var(--${x.el})">
-<div class="ch"><div>${pos?`<div class="src">P${pos}</div>`:''}<h3>${esc(x.n)}</h3><div class="chips"><span class="chip">${x.b}</span><span class="chip el">${ELN[x.el]}</span><span class="chip">${x.w}</span>${x.c?`<span class="chip">${x.c}</span>`:''}${x.pvp?`<span class="chip pvp">${esc(x.pvp)}</span>`:''}</div></div>
+<div class="ch"><div>${pos?`<div class="src">P${pos}</div>`:''}<h3>${esc(x.n)}</h3><div class="chips"><span class="chip">${x.b}</span><span class="chip el">${ELN[x.el]}</span><span class="chip">${x.w}</span>${x.c?`<span class="chip">${x.c}</span>`:''}<span class="chip pvp">${esc(x.pvp)}</span></div></div>
 <label class="done"><input type="checkbox" data-k="${k}" ${done[k]?'checked':''}>Built</label></div>
 ${x.warn?`<div class="warn">${esc(x.warn)}</div>`:''}
-<div class="row"><span>Cube</span><div>${lines(x.cube)}</div></div>
-<div class="row"><span>Overload</span><div>${lines(x.ol)}${x.avoid?`<p><b>Avoid:</b> ${esc(x.avoid)}</p>`:''}</div></div>
-<div class="row"><span>Skills</span><div>${lines(x.sk)}</div></div>
-${x.notes?`<div class="row"><span>Notes</span><div>${lines(x.notes)}</div></div>`:''}
-<div class="src">${also.length?'Also in: '+also.join(', ')+' · ':''}<a href="${x.src}">Source</a></div></article>`};
+<div class="pick"><span>Cube</span><b>${esc(x.cube)}</b><p>${esc(x.why)}</p><small>Backup: ${esc(x.alt)}</small></div>
+<div class="row"><span>Overload</span><div><p>${esc(x.ideal)}</p>${x.filler?`<p class="mute">Filler: ${esc(x.filler)}</p>`:''}${x.avoid?`<p><b>Avoid:</b> ${esc(x.avoid)}</p>`:''}</div></div>
+${row('Skills (PvP)',x.skills)}${row('Doll',x.doll)}${row('Notes',x.note)}
+<div class="src">${also.length?'Also in: '+also.join(', ')+' · ':''}<a href="${x.src}">Prydwen</a></div></article>`};
 const rules=[
  ['Burst order','Every team needs at least one B1, one B2 and one B3, or it never reaches Full Burst.'],
- ['Faster burst wins','On defense, aim for at least two teams at 3RL or faster. On attack, match or outspeed the enemy team. Quantum Cube on batteries (Jackal, Rumani, Anis) speeds this up.'],
- ['P1 and P2 take the hits','Tanks there (Blanc, Noah, Noise, Moran, Bay) want Damage Reduction from their doll, plus Vigor, Tempering or Healing cubes.'],
- ['Overload on tanks is CP','For Defenders and batteries, Overload mainly pads CP. Spend rerolls on your carries: Scarlet: Goddeath, SBS, Cinderella, Helm.'],
- ['Watch Max Ammo','Units that need to reload for their buffs (Noise) should not roll Max Ammo. Carries like SBS and Cinderella want exactly one line.'],
+ ['Faster burst wins','Batteries get Quantum (Jackal, Helm, Rumani, Anis) or Adjutant (Noah, Biscuit). The team that bursts first usually wins.'],
+ ['Tanks want Damage Reduction','Anyone in P1/P2 gets a Damage Reduction doll, plus Vigor, Tempering or Healing. Tempering is the pick for kits that stack Damage Reduction (Moran, Scarlet: Goddeath).'],
+ ['Charge Speed on RLs','RL batteries and tanks roll Charge Speed: in PvP they can hit charge breakpoints. Other lines on them are CP padding.'],
+ ['Max Ammo is a per-unit call','Noise must not roll it. SBS wants exactly one. Cinderella two. Alice and Rapi: Red Hood two to three.'],
+ ['One cube per unit','A cube stays on the Nikke in every team she’s in, so pick for all her teams. That’s why SBS takes Resilience over Bastion.'],
  ['No repeats per side','Each Nikke can be used once across your three defense teams and once across your three attack teams. Attack and defense can share units.']
 ];
 const tabs=document.getElementById('tabs'),view=document.getElementById('view'),q=document.getElementById('q');

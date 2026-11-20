@@ -31,8 +31,8 @@ To do: in-game, Attack Round 3 had Noise in P5. Move her to P1 so she absorbs th
 Started from an AI-written recommendation built around Scarlet: Goddeath and Scarlet: Black Shadow. Checked against Prydwen on 2026-11-20:
 
 - Kept: the three-squad layout (it matches Prydwen's Special Arena template), SBS vs Biscuit rule, SBS gear.
-- Changed: SGD cube is Resilience, not Quantum; removed duplicate units per side (Attack 1 uses Blanc because Attack 2 uses Noah; on defense Noah → Squad 2, Blanc → Squad 1, Bay → Squad 3); Moran over Nero so Squad 3 has a B1.
-- Unverified: the claims that SGD "plays like a wide-radius RL" with burst gen "equal to Centi".
+- Changed: removed duplicate units per side (Attack 1 uses Blanc because Attack 2 uses Noah; on defense Noah → Squad 2, Blanc → Squad 1, Bay → Squad 3); Moran over Nero so Squad 3 has a B1.
+- SGD's burst gen claim is **confirmed**: Prydwen (checked in-browser 2026-11-20) rates her PvP 10/10 with "Clip RL-level burst gen". Her PvP cube is Tempering/Vigor/Bastion, not Quantum (attachment) or Resilience (her PvE cube).
 
 ## Sources
 

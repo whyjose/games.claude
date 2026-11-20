@@ -1,291 +1,219 @@
 # Special Arena unit builds
 
-Checked 2026-11-20. Tags show where each line comes from: _Prydwen_, _Other guide_ (LDShop, OSLink, dotgg), or _General rule_ (not unit-specific). Interactive version: [builds.html](builds.html) · https://claude.ai/artifact/D4MqEfDZE4GaZykHfAyedW
+Checked on Prydwen character pages (Investment tips), 2026-11-20. Where Prydwen lists several cubes, the **cube pick** and its reason are Claude's call for that team; everything else is Prydwen's.
+
+Interactive version: [builds.html](builds.html) · https://claude.ai/artifact/D4MqEfDZE4GaZykHfAyedW
 
 ## SGD Pierce — Defense Squad 1 and Attack Round 1 (same five units)
 
-### P1 · Blanc (B2, wind, AR, Defender, PvP SS)
+### P1 · Blanc (B2, wind, AR, Defender, PvP 10/10)
 
-| | |
-|---|---|
-| Cube | Vigor or Healing Cube (with Wingman), Tempering (relic), or Endurance _(Prydwen)_ |
-| Overload | Prydwen lists no Overload lines. As your P1 tank, Overload is mostly CP padding: keep ATK / Elemental Damage, don’t chase rerolls. _(General rule)_ |
-| Skills | Prydwen’s skill table didn’t load. Level Burst first: it’s her team heal and protection. _(General rule)_ |
-| Notes | P1 takes the opening hits, so stack Damage Reduction on her doll. _(General rule)_ |
+- **Cube: Vigor** — More Max HP means bigger heals and a sturdier P1. Prydwen lists it first for PvP. _(backup: Healing)_
+- **Overload:** None needed: Overload is CP padding only
+- **Skills (PvP):** 1/1/4 → 4/4/7 → 4/4/10 (Burst first)
+- **Doll:** Damage Reduction: she sits near P1 and eats the opening hits
+- Source: https://prydwen.gg/nikke/characters/blanc
 
-Source: https://prydwen.gg/nikke/characters/blanc
+### P2 · Scarlet: Goddeath (B3, fire, AR, Attacker, PvP 10/10)
 
-### P2 · Scarlet: Goddeath (B3, fire, AR, Attacker, Not rated yet)
-
-| | |
-|---|---|
-| Cube | Resilience. Alternatives: Destruction, Bastion. Not Quantum. _(Other guide)_ |
-| Overload | ATK and Critical Damage first (3–4 lines each), then Elemental Damage (2–4) _(Other guide)_<br>Max Ammo 0–1 line _(Other guide)_<br>**Avoid:** Crit Rate (she’s near 100% crit during Burst), Hit Rate, DEF |
-| Skills | Burst and her Crit/Pierce skill to 7 on a budget, 10 when you can. Budget 7/7/7. _(Other guide)_ |
-| Notes | Prydwen hasn’t reviewed her, so her PvP value is untested. Grave is her best partner (ATK + Pierce Damage buff). _(Other guide)_ |
-
-Source: https://www.ldshop.gg/blog/goddess-of-victory-nikke/nikke-scarlet-goddeath.html
+- **Cube: Tempering** — Prydwen wants Damage Taken Reduction on her in PvP, and Tempering is the survival pick. Resilience is her PvE cube, not PvP. _(backup: Vigor)_
+- **Overload:** 4× Elemental Damage, 4× ATK. Filler: Crit Damage over Crit Rate: Grave buffs Pierce, and Pierce favours Crit Damage
+- **Skills (PvP):** 4/4/4 → 4/4/4 → 7/7/7 (→ 10/10/10) · Burst and Skill 1 matter most
+- **Doll:** Damage Reduction
+- **Notes:** Prydwen confirms her “Clip RL-level burst gen”, so she doubles as a burst battery.
+- Source: https://prydwen.gg/nikke/characters/scarlet-goddeath
 
 ### P3 · Grave (B2, fire, AR, Supporter, PvP 3/10)
 
-| | |
-|---|---|
-| Cube | No cube named. Use your highest-level one, Bastion preferred. _(Prydwen)_ |
-| Overload | 4× Elemental Damage, 4× ATK, 4× Crit Damage _(Prydwen)_<br>Filler: 1–2× Max Ammo _(Prydwen)_<br>**Avoid:** Crit Rate |
-| Skills | PvP: 4/4/4 → 4/4/7 → 4/4/10 → 4/7/10. Max Burst first. _(Prydwen)_ |
-| Notes | “Good B2 buffer with some personal damage.” Overload your DPS before her. _(Prydwen)_ |
+- **Cube: Vigor** — She needs no special cube. Vigor keeps her alive because Blanc is this team’s only healer. _(backup: Tempering)_
+- **Overload:** 4× Elemental Damage, 4× ATK, 4× Crit Damage
+- **Skills (PvP):** 4/4/4 → 4/4/7 → 4/4/10 (→ 4/7/10) · max Burst first
+- **Doll:** Damage Reduction
+- **Notes:** Overload your DPS units before her.
+- Source: https://prydwen.gg/nikke/characters/grave
 
-Source: https://prydwen.gg/nikke/characters/grave
+### P4 · Helm (Treasure) (B3, water, SR, Attacker, PvP 10/10)
 
-### P4 · Helm (Favorite Item) (B3, water, SR, Meta OL priority)
+- **Cube: Quantum** — Prydwen calls her the “best burst gen in the game”. Quantum multiplies it, so this team reaches Full Burst first. _(backup: Vigor)_
+- **Overload:** 4× Elemental Damage, 4× ATK. Filler: Crit Rate/Damage, Charge Speed, 1× Max Ammo. **Avoid:** More than 1 Max Ammo, unless you manually Quick Scope
+- **Skills (PvP):** 4/4/4 → 7/4/4 → 10/7/7 (→ 10/10/10)
+- Source: https://prydwen.gg/nikke/characters/helm-treasure
 
-| | |
-|---|---|
-| Cube | Resilience: it helps her last-bullet mechanic _(Prydwen)_ |
-| Overload | 4× Elemental Damage, 4× ATK _(Prydwen)_<br>Filler: Crit Rate/Damage, Charge Speed, 1× Max Ammo (one roll helps burst gen) _(Prydwen)_<br>**Avoid:** More Max Ammo, unless you play her manually with Quick Scope |
-| Skills | Prydwen doesn’t list levels for her. _(Prydwen)_ |
-| Notes | “The best Treasure unit” — worth full investment. _(Prydwen)_ |
+### P5 · Jackal (B1, iron, RL, Defender, PvP 10/10)
 
-Source: https://prydwen.gg/nikke/guides/overload-gear-recommendations
-
-### P5 · Jackal (B1, iron, RL, Queen of PvP)
-
-| | |
-|---|---|
-| Cube | Quantum (faster burst). Vigor if she keeps dying. _(Prydwen)_ |
-| Overload | No unit list. Elemental Damage is valued on Iron PvP units. _(Prydwen)_ |
-| Skills | Prydwen gives no order. Her value is burst gen, not skill levels, so she’s low priority. _(General rule)_ |
-| Notes | “The best tank + burst battery in PvP” — fits in almost every team. _(Prydwen)_ |
-
-Source: https://prydwen.gg/nikke/characters/jackal
+- **Cube: Quantum** — Prydwen’s pick for her. With Helm on Quantum too, this is your fastest-bursting team. _(backup: Adjutant)_
+- **Overload:** 4× Charge Speed (RLs hit Charge Speed breakpoints in PvP). Filler: ATK, Elemental Damage, DEF
+- **Skills (PvP):** 1/1/1 → 4/4/4
+- **Doll:** Damage Reduction
+- Source: https://prydwen.gg/nikke/characters/jackal
 
 ## Stall — Defense Squad 2
 
 ### P1 · Noah (B2, wind, RL, Defender, PvP 10/10)
 
-| | |
-|---|---|
-| Cube | Adjutant: she reaches full charge faster _(Prydwen)_ |
-| Overload | CP padding plus a little survivability. No lines needed. _(Prydwen)_ |
-| Skills | Prydwen gives no levels. Her Burst (3 s team invincibility) works at any level. _(General rule)_ |
-| Notes | Sits in P1/P2, so her doll needs Damage Reduction. _(Prydwen)_ |
+- **Cube: Adjutant** — Prydwen calls it the “clear winner”. She reaches Full Charge faster, so team invincibility lands before the enemy nuke. _(backup: Vigor)_
+- **Overload:** 4× Charge Speed. Filler: ATK, Elemental Damage
+- **Skills (PvP):** 1/1/1 → 4/4/4
+- **Doll:** Damage Reduction: she sits in P1
+- Source: https://prydwen.gg/nikke/characters/noah
 
-Source: https://prydwen.gg/nikke/characters/noah
+### P2 · Noise (B1, electric, RL, Supporter, PvP 10/10)
 
-### P2 · Noise (B1, electric, RL, Defender, PvP 10/10)
-
-| | |
-|---|---|
-| Cube | Healing Cube _(Prydwen)_ |
-| Overload | No list. Any lines are fine for CP. _(Prydwen)_<br>**Avoid:** Max Ammo: she must reload to refresh her Max HP buff and self-heal |
-| Skills | Prydwen gives no order. _(Prydwen)_ |
-| Notes | Doll gives a team Max HP boost, great with Cinderella. Best in P1/P2. _(Prydwen)_ |
-
-Source: https://prydwen.gg/nikke/characters/noise
+- **Cube: Healing** — Prydwen’s go-to. Her job is to tank in P1/P2 and heal herself back up. _(backup: Vigor)_
+- **Overload:** 4× Charge Speed. Filler: ATK, Elemental Damage. **Avoid:** Max Ammo: she must reload to refresh her Max HP buff and self-heal
+- **Skills (PvP):** 1/4/4 → 4/4/7 (→ 7/7/10)
+- **Doll:** Damage Reduction. Her doll also boosts her team Max HP buff, which feeds Cinderella
+- Source: https://prydwen.gg/nikke/characters/noise
 
 ### P3 · Cinderella (B3, electric, RL, Defender, PvP 10/10)
 
-| | |
-|---|---|
-| Cube | No PvP cube named. Pick a damage cube: Resilience or Bastion. _(Prydwen)_ |
-| Overload | Essential: 1× Max Ammo _(Prydwen)_<br>4× Elemental Damage, 4× ATK _(Prydwen)_<br>Filler: 1–3× Crit Rate/Damage _(Prydwen)_ |
-| Skills | PvP: 4/4/4 → 7/4/7 → 10/4/10 → 10/7/10. Skill 1 turns her HP into ATK, so it comes first. _(Prydwen)_ |
-| Notes | Her PvP value scales with her own stats: damage decides whether she wipes. _(Prydwen)_ |
+- **Cube: Vigor** — Her Skill 1 turns HP into ATK, and Noise buffs team Max HP. Vigor stacks on both, so she hits harder. _(backup: Bastion)_
+- **Overload:** 4× Elemental Damage, 4× ATK, 2× Max Ammo. Filler: 1–3× Crit Rate/Damage, 1–2× Max Ammo
+- **Skills (PvP):** 4/4/4 → 7/4/7 → 10/4/10 (→ 10/7/10)
+- Source: https://prydwen.gg/nikke/characters/cinderella
 
-Source: https://prydwen.gg/nikke/characters/cinderella
+### P4 · Biscuit (B2, electric, RL, Supporter, PvP 10/10)
 
-### P4 · Biscuit (B2, electric, RL, PvP 10/10)
+- **Cube: Adjutant** — Prydwen: in PvP “you race to use your Bursts before the enemy”. Switch to Vigor only if Scarlet nukes keep killing her. _(backup: Vigor)_
+- **Overload:** 4× Elemental Damage, 4× ATK, 2–4× Charge Speed. Filler: 0–2× Max Ammo
+- **Skills (PvP):** 1/1/1 → 4/4/4 → 4/4/7 (→ 4/4/10)
+- **Notes:** Her immunity only protects a Defender under 50% HP. Here that’s Noah, Cinderella or Rumani.
+- Source: https://prydwen.gg/nikke/characters/biscuit
 
-| | |
-|---|---|
-| Cube | Adjutant (burst before the enemy). Vigor to survive Scarlet nukes. _(Prydwen)_ |
-| Overload | 4× Elemental Damage, 4× ATK, 2–4× Charge Speed _(Prydwen)_<br>Filler: 0–2× Max Ammo _(Prydwen)_ |
-| Skills | PvP: 4/4/4 → 4/4/7 → 4/4/10 _(Prydwen)_ |
-| Notes | Her immunity only protects a Defender ally under 50% HP, for 5 s, twice per battle. Dies fast to Laplace Treasure splash. _(Prydwen)_ |
+### P5 · Rumani (B1, fire, RL, Defender, PvP 8/10)
 
-Source: https://prydwen.gg/nikke/characters/biscuit
-
-### P5 · Rumani (B1, fire, Clip RL, Defender, PvP 8/10)
-
-| | |
-|---|---|
-| Cube | Quantum. Alternatives: Tempering, Vigor, Adjutant. _(Prydwen)_ |
-| Overload | Ideal: 4× Charge Speed _(Prydwen)_<br>Passable: ATK, Elemental Damage, DEF _(Prydwen)_ |
-| Skills | Stop at 4/4/4. Anything above is only CP. _(Prydwen)_ |
-| Notes | “The only B1 Clip RL aside from Jackal.” Taunts during Burst, pairs well with Biscuit. _(Prydwen)_ |
-
-Source: https://prydwen.gg/nikke/characters/rumani
+- **Cube: Quantum** — This team has no Jackal or Helm, so Rumani is the main battery. Quantum on her speeds up the whole stall. _(backup: Adjutant)_
+- **Overload:** 4× Charge Speed. Filler: ATK, Elemental Damage, DEF
+- **Skills (PvP):** 1/1/1 → 4/4/4 · stop there
+- **Notes:** Taunts during Burst and works well with Biscuit.
+- Source: https://prydwen.gg/nikke/characters/rumani
 
 ## SBS Nuke — Defense Squad 3
 
 ### P1 · Moran (B1, electric, AR, Defender, PvP 10/10)
 
-| | |
-|---|---|
-| Cube | Tempering — Prydwen says it may be required _(Prydwen)_ |
-| Overload | No list. Lines are CP padding for a tank. _(General rule)_ |
-| Skills | PvP: 4/4/4 → 4/7/7 → 4/7/10 _(Prydwen)_ |
-| Notes | Her kit relies on stacking Damage Reduction: give her a DR doll. _(Prydwen)_ |
+- **Cube: Tempering** — Prydwen: her “kit relies on Damage Reduction stacking” and “may require Tempering Cube”. _(backup: Vigor)_
+- **Overload:** None needed: CP padding only
+- **Skills (PvP):** 1/1/1 → 4/4/4 → 4/7/7 (→ 4/7/10)
+- **Doll:** Damage Reduction
+- Source: https://prydwen.gg/nikke/characters/moran
 
-Source: https://prydwen.gg/nikke/characters/moran
+### P2 · Bay (B2, fire, RL, Defender, PvP 6/10)
 
-### P2 · Bay (B2, fire, RL, Defender, PvP S)
-
-| | |
-|---|---|
-| Cube | Vigor: more Max HP to absorb hits _(Prydwen)_ |
-| Overload | No list. CP padding only. _(General rule)_ |
-| Skills | Prydwen gives no levels. _(Prydwen)_ |
-| Notes | Blocks instant AoE nukes like Scarlet’s, but relies on cover and is weak to pierce, splash and slow-charging nukes. _(Prydwen)_ |
-
-Source: https://prydwen.gg/nikke/characters/bay
+- **Cube: Vigor** — Prydwen calls it “the only cube for her”: she shares damage, so more Max HP means more soak. _(backup: Tempering)_
+- **Overload:** 4× Charge Speed. Filler: ATK, Elemental Damage, DEF
+- **Skills (PvP):** 1/1/1 → 4/4/4
+- **Doll:** Damage Reduction
+- Source: https://prydwen.gg/nikke/characters/bay
 
 ### P3 · Scarlet: Black Shadow (B3, wind, RL, Attacker, PvP 9/10)
 
-| | |
-|---|---|
-| Cube | Resilience for PvP (Bastion only with Alice on the team) _(Prydwen)_ |
-| Overload | 1× Max Ammo, 1× Charge Speed above 5%, 4× Elemental Damage, 4× ATK _(Prydwen)_<br>Filler: more Charge Speed _(Prydwen)_ |
-| Skills | Prydwen’s PvP levels didn’t load. She’s a main DPS: aim for 10/10/10, Skill 1 and Burst first. _(General rule)_ |
-| Notes | “If enemy has no Biscuit, she’s powerful.” Sakura also counters her. Needs Damage Reduction. _(Prydwen)_ |
+- **Cube: Resilience** — Bastion only beats it with Alice on the team. SBS has Alice on defense but not in Attack Round 2, and the cube stays on her for both, so Resilience works everywhere. _(backup: Bastion)_
+- **Overload:** 1× Max Ammo, 1× Charge Speed above 5%, 4× Elemental Damage, 4× ATK. Filler: Up to 3× more Charge Speed
+- **Skills (PvP):** 4/4/4 → 7/4/7 → 10/7/10
+- **Doll:** Damage Reduction
+- **Notes:** Blocked by Biscuit. Against teams without Biscuit, she’s powerful.
+- Source: https://prydwen.gg/nikke/characters/scarlet-black-shadow
 
-Source: https://prydwen.gg/nikke/characters/scarlet-black-shadow
+### P4 · Alice (B3, fire, SR, Attacker, PvP 4/10)
 
-### P4 · Alice (B3, fire, SR, PvP 4/10)
+- **Cube: Bastion** — She reloads a lot during Burst. Once she has 2–3 Max Ammo lines Prydwen prefers Bastion. Use Resilience until then. _(backup: Resilience)_
+- **Overload:** 2× Charge Speed, 3–4× ATK, 2–3× Max Ammo, 4× Elemental Damage
+- **Skills (PvP):** 1/1/1 → 10/4/10
+- **Notes:** First goal: over 99% Charge Speed from Skill 1 + Burst + Overload.
+- Source: https://prydwen.gg/nikke/characters/alice
 
-| | |
-|---|---|
-| Cube | Bastion once she has enough Max Ammo lines, Resilience before that _(Prydwen)_ |
-| Overload | About 3× Max Ammo (her Burst reloads a lot) _(Prydwen)_<br>Charge Speed until skills + OL reach over 99% _(Prydwen)_ |
-| Skills | Prydwen gives no PvP levels. Skill 1 and Burst carry her Charge Speed. _(Prydwen)_ |
-| Notes | “Frontline pressurers are becoming less and less reliable.” Privaty may be the better pick here. _(Prydwen)_ |
+### P5 · Anis (B?, iron, RL, Defender, PvP 8/10)
 
-Source: https://prydwen.gg/nikke/characters/alice
+> ⚠ Prydwen lists Anis as an Iron Defender, but your Squad 3 P5 shows B1 Electric. That’s probably a different Nikke. Tell me who and I’ll swap in her build.
 
-### P5 · Anis (B2, iron, RL, Defender, PvP SS)
-
-> ⚠ Prydwen lists Anis as B2 Iron, but your Squad 3 P5 shows B1 Electric. That’s probably a different Nikke — tell me who and I’ll swap in her build.
-
-| | |
-|---|---|
-| Cube | Quantum — “allows you to burst faster than enemy” _(Prydwen)_ |
-| Overload | No list for original Anis. Not worth Overloading beyond CP. _(General rule)_ |
-| Skills | Prydwen’s table didn’t load. _(Prydwen)_ |
-| Notes | Part of the PvP meta as a burst battery. _(Prydwen)_ |
-
-Source: https://prydwen.gg/nikke/characters/anis
+- **Cube: Quantum** — One of Prydwen’s “Holy Trinity” Quantum units: she’s pure burst gen. _(backup: Adjutant)_
+- **Overload:** 4× Charge Speed. Filler: ATK, Elemental Damage, DEF
+- **Skills (PvP):** 1/1/1 (→ 4/4/4)
+- **Doll:** Damage Reduction and CP: she’s an SR
+- Source: https://prydwen.gg/nikke/characters/anis
 
 ## SBS Counter — Attack Round 2 — send at the team without Biscuit
 
 ### P1 · Noah (B2, wind, RL, Defender, PvP 10/10)
 
-| | |
-|---|---|
-| Cube | Adjutant: she reaches full charge faster _(Prydwen)_ |
-| Overload | CP padding plus a little survivability. No lines needed. _(Prydwen)_ |
-| Skills | Prydwen gives no levels. Her Burst (3 s team invincibility) works at any level. _(General rule)_ |
-| Notes | Sits in P1/P2, so her doll needs Damage Reduction. _(Prydwen)_ |
+- **Cube: Adjutant** — Prydwen calls it the “clear winner”. She reaches Full Charge faster, so team invincibility lands before the enemy nuke. _(backup: Vigor)_
+- **Overload:** 4× Charge Speed. Filler: ATK, Elemental Damage
+- **Skills (PvP):** 1/1/1 → 4/4/4
+- **Doll:** Damage Reduction: she sits in P1
+- Source: https://prydwen.gg/nikke/characters/noah
 
-Source: https://prydwen.gg/nikke/characters/noah
+### P2 · Biscuit (B2, electric, RL, Supporter, PvP 10/10)
 
-### P2 · Biscuit (B2, electric, RL, PvP 10/10)
-
-| | |
-|---|---|
-| Cube | Adjutant (burst before the enemy). Vigor to survive Scarlet nukes. _(Prydwen)_ |
-| Overload | 4× Elemental Damage, 4× ATK, 2–4× Charge Speed _(Prydwen)_<br>Filler: 0–2× Max Ammo _(Prydwen)_ |
-| Skills | PvP: 4/4/4 → 4/4/7 → 4/4/10 _(Prydwen)_ |
-| Notes | Her immunity only protects a Defender ally under 50% HP, for 5 s, twice per battle. Dies fast to Laplace Treasure splash. _(Prydwen)_ |
-
-Source: https://prydwen.gg/nikke/characters/biscuit
+- **Cube: Adjutant** — Prydwen: in PvP “you race to use your Bursts before the enemy”. Switch to Vigor only if Scarlet nukes keep killing her. _(backup: Vigor)_
+- **Overload:** 4× Elemental Damage, 4× ATK, 2–4× Charge Speed. Filler: 0–2× Max Ammo
+- **Skills (PvP):** 1/1/1 → 4/4/4 → 4/4/7 (→ 4/4/10)
+- **Notes:** Her immunity only protects a Defender under 50% HP. Here that’s Noah, Cinderella or Rumani.
+- Source: https://prydwen.gg/nikke/characters/biscuit
 
 ### P3 · Scarlet: Black Shadow (B3, wind, RL, Attacker, PvP 9/10)
 
-| | |
-|---|---|
-| Cube | Resilience for PvP (Bastion only with Alice on the team) _(Prydwen)_ |
-| Overload | 1× Max Ammo, 1× Charge Speed above 5%, 4× Elemental Damage, 4× ATK _(Prydwen)_<br>Filler: more Charge Speed _(Prydwen)_ |
-| Skills | Prydwen’s PvP levels didn’t load. She’s a main DPS: aim for 10/10/10, Skill 1 and Burst first. _(General rule)_ |
-| Notes | “If enemy has no Biscuit, she’s powerful.” Sakura also counters her. Needs Damage Reduction. _(Prydwen)_ |
+- **Cube: Resilience** — Bastion only beats it with Alice on the team. SBS has Alice on defense but not in Attack Round 2, and the cube stays on her for both, so Resilience works everywhere. _(backup: Bastion)_
+- **Overload:** 1× Max Ammo, 1× Charge Speed above 5%, 4× Elemental Damage, 4× ATK. Filler: Up to 3× more Charge Speed
+- **Skills (PvP):** 4/4/4 → 7/4/7 → 10/7/10
+- **Doll:** Damage Reduction
+- **Notes:** Blocked by Biscuit. Against teams without Biscuit, she’s powerful.
+- Source: https://prydwen.gg/nikke/characters/scarlet-black-shadow
 
-Source: https://prydwen.gg/nikke/characters/scarlet-black-shadow
+### P4 · Rapunzel (B1, iron, RL, Supporter, PvP 8/10)
 
-### P4 · Rapunzel (B1, iron, RL)
+- **Cube: Healing** — Prydwen’s go-to: bigger heals. Her revive doesn’t depend on the cube. _(backup: Vigor)_
+- **Overload:** 4× Charge Speed. Filler: 2–4× Max Ammo, Elemental Damage, ATK
+- **Skills (PvP):** 1/1/1 → 4/4/4 (→ 7/4/4)
+- **Doll:** Damage Reduction keeps her alive (less urgent: her revive doesn’t rely on it)
+- Source: https://prydwen.gg/nikke/characters/rapunzel
 
-> ⚠ Not verified: Prydwen’s Rapunzel page failed to load twice.
+### P5 · Rumani (B1, fire, RL, Defender, PvP 8/10)
 
-| | |
-|---|---|
-| Cube | Her Prydwen page wouldn’t load. She’s a revive/heal support: a survival cube (Vigor) is the safe pick. _(General rule)_ |
-| Overload | CP padding. No specific lines. _(General rule)_ |
-| Skills | Burst (revive) first. _(General rule)_ |
-
-Source: https://prydwen.gg/nikke/characters/rapunzel
-
-### P5 · Rumani (B1, fire, Clip RL, Defender, PvP 8/10)
-
-| | |
-|---|---|
-| Cube | Quantum. Alternatives: Tempering, Vigor, Adjutant. _(Prydwen)_ |
-| Overload | Ideal: 4× Charge Speed _(Prydwen)_<br>Passable: ATK, Elemental Damage, DEF _(Prydwen)_ |
-| Skills | Stop at 4/4/4. Anything above is only CP. _(Prydwen)_ |
-| Notes | “The only B1 Clip RL aside from Jackal.” Taunts during Burst, pairs well with Biscuit. _(Prydwen)_ |
-
-Source: https://prydwen.gg/nikke/characters/rumani
+- **Cube: Quantum** — This team has no Jackal or Helm, so Rumani is the main battery. Quantum on her speeds up the whole stall. _(backup: Adjutant)_
+- **Overload:** 4× Charge Speed. Filler: ATK, Elemental Damage, DEF
+- **Skills (PvP):** 1/1/1 → 4/4/4 · stop there
+- **Notes:** Taunts during Burst and works well with Biscuit.
+- Source: https://prydwen.gg/nikke/characters/rumani
 
 ## Throwaway — Attack Round 3 — Noise goes in P1
 
-### P1 · Noise (B1, electric, RL, Defender, PvP 10/10)
+### P1 · Noise (B1, electric, RL, Supporter, PvP 10/10)
 
-| | |
-|---|---|
-| Cube | Healing Cube _(Prydwen)_ |
-| Overload | No list. Any lines are fine for CP. _(Prydwen)_<br>**Avoid:** Max Ammo: she must reload to refresh her Max HP buff and self-heal |
-| Skills | Prydwen gives no order. _(Prydwen)_ |
-| Notes | Doll gives a team Max HP boost, great with Cinderella. Best in P1/P2. _(Prydwen)_ |
-
-Source: https://prydwen.gg/nikke/characters/noise
+- **Cube: Healing** — Prydwen’s go-to. Her job is to tank in P1/P2 and heal herself back up. _(backup: Vigor)_
+- **Overload:** 4× Charge Speed. Filler: ATK, Elemental Damage. **Avoid:** Max Ammo: she must reload to refresh her Max HP buff and self-heal
+- **Skills (PvP):** 1/4/4 → 4/4/7 (→ 7/7/10)
+- **Doll:** Damage Reduction. Her doll also boosts her team Max HP buff, which feeds Cinderella
+- Source: https://prydwen.gg/nikke/characters/noise
 
 ### P2 · Crown (B2, iron, MG, Defender, PvP 5/10)
 
-| | |
-|---|---|
-| Cube | Resilience (Bastion is generally good on MGs) _(Prydwen)_ |
-| Overload | 2× Max Ammo, 4× Elemental Damage, 4× ATK _(Prydwen)_<br>Filler: Crit Rate, Crit Damage, Max Ammo _(Prydwen)_ |
-| Skills | Skill 1 to 10 first, then Burst 7–10, Skill 2 7–10 _(Prydwen)_ |
-| Notes | Very high OL priority for PvE. Her ATK buff only hits units that use their Burst. _(Prydwen)_ |
+- **Cube: Resilience** — Prydwen: “Always use Resilience cube on Crown” because she buffs her own reload. She’s a PvE staple, so don’t swap her cube for a throwaway team. _(backup: Vigor)_
+- **Overload:** 2× Max Ammo, 4× Elemental Damage, 4× ATK. Filler: Crit Rate, Crit Damage, Max Ammo
+- **Skills (PvP):** 4/4/4 → 7/4/7 → 10/4/10
+- **Notes:** Her ATK buff only hits units that use their Burst.
+- Source: https://prydwen.gg/nikke/characters/crown
 
-Source: https://prydwen.gg/nikke/characters/crown
+### P3 · Rapi: Red Hood (B3, fire, MG, Attacker, PvP 5/10)
 
-### P3 · Rapi: Red Hood (B3, fire, SR, PvP 5/10)
+- **Cube: Resilience** — Crown is in this team and gives Reload Speed. Prydwen says Resilience is the better choice in Crown comps. Reload just before Full Burst. _(backup: Bastion)_
+- **Overload:** 4× Elemental Damage, 4× ATK, 2–3× Max Ammo (very important for her)
+- **Skills (PvP):** 4/4/4 → 4/4/4 → 7/7/7 (→ 10/10/10)
+- **Notes:** Her whole-screen AoE wrecks teams with many Electric and Wind units.
+- Source: https://prydwen.gg/nikke/characters/rapi-red-hood
 
-| | |
-|---|---|
-| Cube | Bastion (Full Charge route) or Resilience (Quick Scope route) _(Prydwen)_ |
-| Overload | 1+ Max Ammo and ATK first; Elemental Damage is situational _(Prydwen)_<br>Charge Speed over Charge Damage _(Prydwen)_ |
-| Skills | 4/4/4 → 7/7/7 → 10/10/10 _(Prydwen)_ |
-| Notes | Can Burst at any stage. Easily countered by Biscuit. _(Prydwen)_ |
+### P4 · Marian: Queen (B3, fire, MG, Attacker, PvP 8/10)
 
-Source: https://prydwen.gg/nikke/characters/red-hood
+- **Cube: Bastion** — The only damage cube on her PvP list. An MG wants to keep firing without reloading. _(backup: Tempering)_
+- **Overload:** 4× Elemental Damage, 4× ATK, 1–4× Max Ammo. Filler: Crit Rate, Crit Damage
+- **Skills (PvP):** 4/4/4 → 4/4/4 → 7/7/7 (→ 10/10/10) · max Skill 2 and Burst for PvP
+- **Notes:** She can break strong stalls like Moran + Biscuit + Helm, so she’s more than a throwaway.
+- Source: https://prydwen.gg/nikke/characters/marian-queen
 
-### P4 · Marian: Queen (B3, fire, MG, Attacker, Not rated yet)
+### P5 · Little Mermaid (Siren) (B1, wind, SMG, Supporter, PvP 8/10)
 
-| | |
-|---|---|
-| Cube | No guide gives a PvP cube yet. Bastion is the usual MG pick. _(General rule)_ |
-| Overload | ATK, Max Ammo, Crit Damage _(Other guide)_ |
-| Skills | No reliable levels yet. Prydwen hasn’t reviewed her. _(Prydwen)_ |
-| Notes | Throwaway team: don’t spend PvP-only resources on her. _(General rule)_ |
-
-Source: https://www.oslink.io/ja/blog/guide/goddess-of-victory-nikke-marian-queen-build-guide.html
-
-### P5 · Little Mermaid (B1, wind, SMG, Supporter)
-
-| | |
-|---|---|
-| Cube | No PvP cube found. She’s a buffer with Burst cooldown reduction. _(General rule)_ |
-| Overload | No lines found. Treat as CP padding. _(General rule)_ |
-| Skills | No source found. _(General rule)_ |
-| Notes | Throwaway team: low investment priority. _(General rule)_ |
-
-Source: https://dotgg.gg/nikke/characters/little-mermaid
+- **Cube: Tempering** — She stuns the enemy P1 and Prydwen says she may need Damage Reduction. Tempering is her first PvP pick. _(backup: Bastion)_
+- **Overload:** 4× Elemental Damage, 4× ATK. Filler: 4× Crit Rate, 4× Crit Damage, 4× Max Ammo
+- **Skills (PvP):** 4/4/4 → 4/4/4 → 7/7/7 (→ 10/10/7)
+- **Doll:** Damage Reduction
+- Source: https://prydwen.gg/nikke/characters/siren
