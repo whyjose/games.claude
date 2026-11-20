@@ -6,6 +6,7 @@ Current rank: Diamond 5 (Special Arena).
 
 - [Special Arena teams](special-arena/teams.md): current defense and attack lineups, and the reasoning behind them.
 - [Unit builds](special-arena/builds.md): cube, Overload lines, skill levels and notes for every unit in those teams.
+- [Overload rerolling](overload.md): costs, minimum values and when to stop.
 - [Interactive builds page](special-arena/builds.html): the same builds as a page with team tabs and search. Live version: https://claude.ai/artifact/D4MqEfDZE4GaZykHfAyedW
 
 ## Roster notes
@@ -24,4 +25,4 @@ Current rank: Diamond 5 (Special Arena).
 
 ## Gear progress
 
-- 2026-11-20 · Scarlet: Goddeath Overload piece (Lv 5): reroll offered, from Elemental Damage 23.56% / – / – to ATK 5.47% + Elemental Damage 22.15% / –. Recommended taking the new roll (two target lines beat one). ATK value is low. Third line target: Crit Damage (a piece cannot roll the same effect twice, so the other ATK/Elemental Damage lines come from the other 3 pieces).
+- 2026-11-20 · Scarlet: Goddeath Overload piece (Lv 5): reroll offered, from Elemental Damage 23.56% / – / – to ATK 5.47% + Elemental Damage 22.15% / –. Plan: take it, lock Elemental Damage, Reset Attributes until ATK ≥ 9.70%, then stop (no third line). See [overload.md](overload.md).
