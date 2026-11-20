@@ -10,21 +10,23 @@ Set on 2026-11-20. Defense CP 3,483,229 · Attack CP 3,400,497.
 
 ## Defense
 
+Reworked 2026-11-20 around Moran (Treasure) + Helm (Treasure), the lifesteal stall Prydwen says SGD-style teams struggle against.
+
 | Squad | P1 | P2 | P3 | P4 | P5 |
 |---|---|---|---|---|---|
-| 1. SGD Pierce | Blanc (B2) | Scarlet: Goddeath (B3) | Grave (B2) | Helm, Favorite Item (B3) | Jackal (B1) |
-| 2. Stall | Noah (B2) | Noise (B1) | Cinderella (B3) | Biscuit (B2) | Rumani (B1) |
-| 3. SBS Nuke | Moran (Treasure) (B1) | Bay (Treasure) (B2) | Scarlet: Black Shadow (B3) | Alice (B3) | Anis? (shows B1 Electric — to confirm) |
+| 1. Lifesteal stall | Moran (Treasure) (B1) | Noah (B2) | Cinderella (B3) | Biscuit (B2) | Helm (Treasure) (B3) |
+| 2. SGD Pierce | Blanc (B2) | Scarlet: Goddeath (B3) | Grave (B2) | Jackal (B1) | Rumani (B1) |
+| 3. SBS Nuke | Noise (B1) | Bay (Treasure) (B2) | Scarlet: Black Shadow (B3) | Alice (B3) | Anis? (to confirm) |
 
 ## Attack
 
 | Round | P1 | P2 | P3 | P4 | P5 | Send it at |
 |---|---|---|---|---|---|---|
-| 1 | Blanc | Scarlet: Goddeath | Grave | Helm (FI) | Jackal | Their fastest team that doesn't stall |
-| 2 | Noah | Biscuit | Scarlet: Black Shadow (Cinderella if they have Biscuit + a Defender) | Rapunzel | Rumani | Their team without Biscuit |
-| 3 | Noise | Crown | Rapi: Red Hood | Marian: Queen | Little Mermaid | Their strongest team (throwaway) |
+| 1 | Blanc | Scarlet: Goddeath | Grave | Helm (Treasure) | Jackal | Fast teams relying on Noah's immunity |
+| 2 | Noah | Biscuit | Scarlet: Black Shadow | Rapunzel | Rumani | Their team without Biscuit + Defender, and without Sakura |
+| 3 | Moran (Treasure) | Crown | Rapi: Red Hood | Marian: Queen | Little Mermaid | Lifesteal stalls, Electric/Wind-heavy teams |
 
-To do: in-game, Attack Round 3 had Noise in P5. Move her to P1 so she absorbs the opening nuke.
+Previous setup (before 2026-11-20 rework): Def 1 Blanc/SGD/Grave/Helm/Jackal, Def 2 Noah/Noise/Cinderella/Biscuit/Rumani, Def 3 Moran/Bay/SBS/Alice/Anis; Attack 3 had Noise in P1.
 
 ## Matchups: SGD team (Defense 1 / Attack 1)
 

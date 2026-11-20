@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Special Arena Builds</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* VOICE: a field manual for one player's arena roster, terse and tactical.
+   IDEA: the in-game Squad Formation screen turned into an upgrade sheet: where each Nikke is, where she should be.
+   PICTURE: the five-slot formation strip with portraits, burst and element; each slot opens a build card.
+   COLOUR and TYPE: graphite ground, NIKKE pink accent, the game's own element colours; Chakra Petch + IBM Plex Sans.
+   LAYOUT: team tabs, formation strip, then one card per unit: target build, current state, next steps. */
+:root{color-scheme:light dark;--bg:light-dark(#f4f4f6,#121317);--panel:light-dark(#fff,#1b1d23);--line:light-dark(#dcdde3,#2c2f38);--ink:light-dark(#15161a,#eceef3);--mute:light-dark(#5b5f6b,#9aa0ad);--acc:#ff2d75;--accs:light-dark(#ffe3ec,#3a1424);
+--ok:light-dark(#137a3a,#4fd283);--okb:light-dark(#e3f6ea,#123322);--low:light-dark(#9a5b00,#ffbf5a);--lowb:light-dark(#fff2dc,#3a2a0e);--bad:light-dark(#b3122e,#ff7a8f);--badb:light-dark(#ffe3e7,#3d1219);
+--fire:#e5483b;--water:#2d7fe0;--wind:#2fae5c;--electric:#9a4ce6;--iron:#e08a1e}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 "IBM Plex Sans",system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3,.tab,.slot b,.chip,.big{font-family:"Chakra Petch","IBM Plex Sans",sans-serif}
+.band{padding:clamp(18px,3vw,40px) max(4vw,14px);max-width:1240px;margin:auto}
+header.band{padding-bottom:6px}
+h1{font-size:clamp(32px,5vw,46px);line-height:1.05;margin:0 0 8px;text-wrap:balance}
+.lead{color:var(--mute);margin:0;max-width:70ch}
+.bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:16px}
+.tabs{display:flex;flex-wrap:wrap;gap:6px}
+.tab{min-height:44px;padding:8px 13px;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:6px;font-size:15px;font-weight:600;cursor:pointer}
+.tab[aria-selected=true]{background:var(--acc);border-color:var(--acc);color:#fff}
+.tab:focus-visible,input:focus-visible,.slot:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+input[type=search]{min-height:44px;font:16px "IBM Plex Sans",sans-serif;padding:8px 12px;border:1px solid var(--line);border-radius:6px;background:var(--panel);color:var(--ink);flex:1 1 200px;max-width:320px}
+.teamhead{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:baseline}
+h2{font-size:28px;margin:0}
+.where{color:var(--mute);font-size:15px;max-width:60ch}
+.strip{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin:16px 0 24px}
+.slot{all:unset;cursor:pointer;background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden;display:grid;position:relative}
+.slot img{width:100%;aspect-ratio:1;object-fit:cover;display:block;background:#000}
+.slot .meta{padding:8px 10px 12px;display:grid;gap:2px}
+.slot .p{font-size:13px;color:var(--mute)}
+.slot b{font-size:16px;line-height:1.15}
+.slot .bn{position:absolute;top:8px;left:8px;font:700 15px/1 "Chakra Petch",sans-serif;color:#fff;background:var(--el);padding:4px 7px;border-radius:4px}
+.slot::after{content:"";position:absolute;inset:auto 0 0 0;height:4px;background:var(--el)}
+.slot .score{position:absolute;top:8px;right:8px;font-size:12px;font-weight:600;background:rgba(0,0,0,.7);color:#fff;padding:3px 6px;border-radius:4px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,420px),1fr));gap:14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;display:grid;gap:12px;align-content:start;scroll-margin-top:16px}
+.card.hit{box-shadow:0 0 0 3px var(--acc)}
+.ch{display:grid;grid-template-columns:72px minmax(0,1fr);gap:12px;align-items:center}
+.ch img{width:72px;height:72px;border-radius:8px;object-fit:cover;background:#000;border:2px solid var(--el)}
+h3{font-size:21px;margin:0;line-height:1.1}
+.chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}
+.chip{font-size:12.5px;font-weight:600;padding:2px 7px;border-radius:4px;background:var(--bg);border:1px solid var(--line);white-space:nowrap}
+.chip.el{color:#fff;border-color:transparent;background:var(--el)}
+.chip.pvp{background:var(--accs);border-color:transparent;color:light-dark(#a3003d,#ff9fbf)}
+.sec{border-top:1px solid var(--line);padding-top:10px;display:grid;gap:6px}
+.sec>h4{margin:0;font-size:13px;color:var(--mute);font-weight:600}
+.kv{display:grid;grid-template-columns:7.5em minmax(0,1fr);gap:4px 10px;font-size:15px}
+.kv>span{color:var(--mute);font-size:13px;padding-top:2px}
+.kv p{margin:0}
+.pick b{font:700 19px/1.2 "Chakra Petch",sans-serif;color:var(--acc)}
+.small{font-size:14px;color:var(--mute)}
+table.ol{width:100%;border-collapse:collapse;font-size:14px}
+table.ol th,table.ol td{text-align:left;padding:4px 6px;border-bottom:1px solid var(--line)}
+table.ol th{font-size:12.5px;color:var(--mute);font-weight:600}
+table.ol td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.st{font-size:12px;font-weight:600;padding:1px 6px;border-radius:3px;white-space:nowrap}
+.st.ok{color:var(--ok);background:var(--okb)}.st.low{color:var(--low);background:var(--lowb)}.st.bad{color:var(--bad);background:var(--badb)}
+.pieces{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+.pc{border:1px solid var(--line);border-radius:6px;padding:6px;font-size:12.5px;display:grid;gap:3px;align-content:start}
+.pc i{font-style:normal;color:var(--mute);font-size:12px}
+.ln{padding:1px 4px;border-radius:3px;display:flex;justify-content:space-between;gap:4px}
+.ln.ok{background:var(--okb);color:var(--ok)}.ln.low{background:var(--lowb);color:var(--low)}.ln.bad{background:var(--badb);color:var(--bad)}.ln.fill{background:var(--bg)}.ln.no{color:var(--mute)}
+.ln.empty{color:var(--mute);opacity:.6}
+.todo{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.todo label{display:flex;gap:9px;align-items:flex-start;cursor:pointer;min-height:36px;padding:6px 0;font-size:15px}
+.todo input{width:20px;height:20px;flex:none;margin-top:1px;accent-color:var(--acc)}
+.todo .done span{text-decoration:line-through;color:var(--mute)}
+.pri{font-size:11.5px;font-weight:700;padding:1px 5px;border-radius:3px;margin-right:4px;vertical-align:1px}
+.pri.p1{background:var(--acc);color:#fff}.pri.p2{background:var(--lowb);color:var(--low)}.pri.p3{background:var(--bg);color:var(--mute);border:1px solid var(--line)}
+.warn{background:var(--lowb);border:1px solid light-dark(#f0c87a,#6a4e1c);border-radius:8px;padding:9px 11px;font-size:14.5px}
+.src{font-size:13px;color:var(--mute)}.src a{color:inherit}
+.queue{display:grid;gap:8px;max-width:860px}
+.qrow{display:grid;grid-template-columns:44px minmax(0,1fr);gap:10px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:8px 12px}
+.qrow img{width:44px;height:44px;border-radius:6px;object-fit:cover;background:#000}
+.qrow label{display:flex;gap:9px;align-items:center;cursor:pointer;min-height:44px}
+.qrow input{width:20px;height:20px;flex:none;accent-color:var(--acc)}
+.qrow.done span{text-decoration:line-through;color:var(--mute)}
+.rules{display:grid;gap:12px;max-width:860px}
+.rules .card p{margin:0}
+table.ct{width:100%;border-collapse:collapse;font-size:15px}
+table.ct th,table.ct td{text-align:left;padding:8px;border-bottom:1px solid var(--line);vertical-align:top}
+table.ct th{font-size:13px;color:var(--mute)}
+.empty{color:var(--mute);padding:20px 0}
+footer{color:var(--mute);font-size:13.5px}footer a{color:inherit}
+@media(max-width:600px){.strip{grid-template-columns:repeat(5,minmax(104px,1fr));overflow-x:auto;padding-bottom:6px}.kv{grid-template-columns:1fr}table.ct{font-size:14px}.stack thead{display:none}.stack tr{display:grid;padding-block:8px}.stack td{border:0;padding:2px 0}}
+@media(prefers-reduced-motion:no-preference){.card.hit{transition:box-shadow .3s}}
+</style>
+</head>
+<body>
+<header class="band">
+<h1>Special Arena builds</h1>
+<p class="lead">Your six arena teams, Nikke by Nikke: the build Prydwen recommends, what your Nikke actually has today (read from ShiftyPad), and the next upgrades to make. Tick steps off as you go.</p>
+<div class="bar">
+<div class="tabs" role="tablist" id="tabs"></div>
+<input type="search" id="q" placeholder="Find a Nikke, e.g. Biscuit" aria-label="Find a Nikke">
+</div>
+</header>
+<main class="band" id="view" style="padding-top:10px"></main>
+<footer class="band">Builds checked on Prydwen character pages on 20 Nov 2026. "Now" values read from ShiftyPad (account PEACH) the same day; they won't update by themselves. Cube picks and team changes are my call based on the team. Portraits from Prydwen. Ticks are saved in this browser only.</footer>
+<script>
+{
+const CUR={"sgd":{"pw":236912,"sk":"10/10/10","doll":"SR Phase 15","cube":"Tempering 6","lvl":5,"pieces":[[["atk",5.47],["ele",22.15],null],[["ele",9.54],["ammo",36.06],null],[["ele",13.75],["crate",3.32],null],[["crate",2.98],["ele",15.15],["cdmg",7.62]]]},"blanc":{"pw":251644,"sk":"4/5/10","doll":"SR Phase 5","cube":"Vigor 6","lvl":5,"pieces":[[["cdmg",16.44],["cs",4.92],null],[["atk",11.81],["cs",4.92],null],[["cdmg",16.44],null,null],[["crate",5.71],null,["chdmg",11.81]]]},"grave":{"pw":235970,"sk":"4/7/10","doll":"SR Phase 5","cube":"Vigor 6","lvl":0,"pieces":[[["cdmg",16.44],["crate",5.71],null],[["chdmg",11.81],["cs",4.92],null],[["cdmg",16.44],null,null],[["cs",4.92],["chdmg",11.81],["atk",11.81]]]},"helm":{"pw":318886,"sk":"10/10/10","doll":"Treasure Phase 3","cube":"Quantum 6","lvl":5,"pieces":[[["cs",2.57],["hit",12.52],["ammo",31.95]],[["ele",16.55],["chdmg",5.47],["cdmg",13.5]],[["cs",4.92],["atk",11.81],null],[["chdmg",11.11],["cs",5.51],["ele",23.56]]]},"jackal":{"pw":244875,"sk":"4/4/4","doll":"SR Phase 15","cube":"Quantum 6","lvl":5,"pieces":[[["crate",5.71],["cs",4.92],["hit",11.81]],[["crate",5.71],null,null],[["def",11.81],null,["hit",11.81]],[["chdmg",11.81],null,null]]},"noah":{"pw":234583,"sk":"4/4/4","doll":"SR Phase 15","cube":"Adjutant 6","lvl":5,"pieces":[[["ele",23.56],null,null],[["crate",5.71],null,null],[["cdmg",16.44],null,["ammo",68.93]],[["cs",4.92],["atk",11.81],null]]},"noise":{"pw":262679,"sk":"7/7/10","doll":"SR Phase 5","cube":"Healing 6","lvl":0,"pieces":[[["hit",11.81],null,null],[["chdmg",11.81],["ele",23.56],["ammo",68.93]],[["def",11.81],["cdmg",16.44],["chdmg",11.81]],[["def",11.81],null,null]]},"cinderella":{"pw":297035,"sk":"10/10/10","doll":"SR Phase 15","cube":"Vigor 6","lvl":5,"pieces":[[["atk",14.63],["ele",19.35],null],[["ele",16.55],["chdmg",8.29],["cdmg",14.48]],[["ele",23.56],["cdmg",7.62],["crate",6.39]],[["ele",22.15],["cdmg",6.64],["atk",10.4]]]},"biscuit":{"pw":265410,"sk":"4/4/10","doll":"SR Phase 6","cube":"Adjutant 6","lvl":5,"pieces":[[["atk",11.81],["ele",23.56],null],[["def",11.81],["ele",23.56],["crate",5.71]],[["ele",23.56],null,null],[["hit",11.81],null,null]]},"rumani":{"pw":220340,"sk":"4/4/4","doll":"SR Phase 5","cube":"Quantum 6","lvl":0,"pieces":[[["def",11.81],null,["cs",4.92]],[["hit",11.81],null,["ammo",68.93]],[["ele",23.56],["cdmg",16.44],null],[["atk",11.81],null,null]]},"moran":{"pw":297298,"sk":"10/10/10","doll":"Treasure Phase 3","cube":"Vigor 6","lvl":5,"pieces":[[["hit",11.81],["def",11.81],["chdmg",11.81]],[["ammo",68.93],["atk",11.81],null],[["ammo",68.93],null,["ele",23.56]],[["chdmg",11.81],["cdmg",16.44],null]]},"bay":{"pw":272449,"sk":"10/10/10","doll":"Treasure Phase 3","cube":"Tempering 6","lvl":0,"pieces":[[["crate",5.71],null,null],[["ammo",68.93],["cs",4.92],["crate",5.71]],[["ele",23.56],["chdmg",11.81],["cdmg",16.44]],[["atk",11.81],null,null]]},"sbs":{"pw":241015,"sk":"10/7/10","doll":"SR Phase 15","cube":"Resilience 15","lvl":5,"pieces":[[["atk",11.81],null,null],[["def",11.81],null,["cdmg",16.44]],[["crate",5.71],null,null],[["atk",7.59],null,["hit",6.18]]]},"alice":{"pw":259113,"sk":"10/4/10","doll":"SR Phase 15","cube":"Bastion 13","lvl":5,"pieces":[[["ele",23.56],["chdmg",11.81],null],[["cs",2.86],null,["atk",11.11]],[["atk",10.4],["chdmg",7.59],["cdmg",6.64]],[["crate",2.64],["ammo",60.71],["cdmg",8.6]]]},"anis":{"pw":184526,"sk":"4/4/4","doll":"SR Phase 5","cube":"Quantum 6","lvl":0,"pieces":[[["hit",11.81],["def",11.81],null],[["cdmg",16.44],null,["chdmg",11.81]],[["hit",11.81],["chdmg",11.81],null],[["def",11.81],null,null]]},"rapunzel":{"pw":207127,"sk":"7/4/4","doll":"SR Phase 5","cube":"Healing 6","lvl":0,"pieces":[[["crate",5.71],null,["cdmg",16.44]],[["def",11.81],["hit",11.81],null],[["atk",11.81],null,null],[["ammo",68.93],null,null]]},"crown":{"pw":270399,"sk":"10/10/10","doll":"SR Phase 15","cube":"Resilience 15","lvl":5,"pieces":[[["ammo",56.6],["atk",11.81],["hit",6.18]],[["ammo",60.71],["crate",2.98],["atk",4.77]],[["ammo",68.93],["atk",11.81],null],[["ammo",52.5],["atk",11.81],null]]},"redhood":{"pw":299948,"sk":"10/10/10","doll":"SR Phase 15","cube":"Resilience 15","lvl":5,"pieces":[[["ammo",52.5],["hit",7.59],["atk",11.11]],[["ele",10.94],["cdmg",18.4],["def",13.93]],[["crate",5.71],["ammo",68.93],null],[["ammo",52.5],["cdmg",12.52],["ele",29.16]]]},"marian":{"pw":243759,"sk":"10/10/10","doll":"SR Phase 15","cube":"Bastion 13","lvl":5,"pieces":[[["crate",5.71],["def",11.81],null],[["chdmg",9],["atk",9],["ammo",44.28]],[["ele",12.34],["cdmg",10.56],null],[["ammo",68.93],null,null]]},"mermaid":{"pw":282729,"sk":"10/10/10","doll":"SR Phase 15","cube":"Tempering 6","lvl":5,"pieces":[[["cs",3.45],["atk",9],["ele",22.15]],[["ammo",27.84],["cdmg",11.54],["ele",17.95]],[["ele",17.95],["hit",6.18],["ammo",77.15]],[["chdmg",11.81],null,null]]}};
+const pry=s=>'https://prydwen.gg/nikke/characters/'+s;
+const DR='Damage Reduction';
+const EF={ele:'Elemental Dmg',atk:'ATK',ammo:'Max Ammo',cs:'Charge Speed',cdmg:'Crit Damage',crate:'Crit Rate',chdmg:'Charge Damage',hit:'Hit Rate',def:'DEF'};
+const OLP={sgd:1,sbs:1,cinderella:1,marian:2,alice:2,redhood:2,helm:2,moran:2};
+const MIN={ele:19.35,atk:9.70,ammo:52.50,cs:4.04,hit:9.70};
+const U={
+blanc:{n:'Blanc',b:'B2',el:'wind',w:'AR',c:'Defender',pvp:'PvP 10/10',src:pry('blanc'),cube:'Vigor',why:'More Max HP means bigger heals and a sturdier P1.',alt:'Healing',sk:'4/4/10',want:{},fill:[],olNote:'Overload is CP padding only: no target lines.',doll:DR+': she sits in P1',front:1},
+sgd:{n:'Scarlet: Goddeath',b:'B3',el:'fire',w:'AR',c:'Attacker',pvp:'PvP 10/10',src:pry('scarlet-goddeath'),cube:'Tempering',why:'Prydwen wants Damage Taken Reduction on her in PvP; Tempering is the survival pick. Resilience is her PvE cube.',alt:'Vigor',sk:'7/7/7',skNote:'→ 10/10/10 · Burst and Skill 1 first',want:{ele:4,atk:4},fill:['cdmg','crate'],olNote:'Crit Damage beats Crit Rate for her (Pierce).',doll:DR,note:'“Clip RL-level burst gen”: she doubles as a battery.'},
+grave:{n:'Grave',b:'B2',el:'fire',w:'AR',c:'Supporter',pvp:'PvP 3/10',src:pry('grave'),cube:'Vigor',why:'No special cube needed; Vigor keeps her alive because Blanc is the team’s only healer.',alt:'Tempering',sk:'4/4/10',skNote:'→ 4/7/10 · max Burst first',want:{ele:4,atk:4,cdmg:4},fill:[],olNote:'Overload your DPS before her.',doll:DR},
+helm:{n:'Helm (Treasure)',b:'B3',el:'water',w:'SR',c:'Attacker',pvp:'PvP 10/10',src:pry('helm-treasure'),cube:'Quantum',why:'“Best burst gen in the game”: Quantum multiplies it.',alt:'Vigor',sk:'10/7/7',skNote:'→ 10/10/10',want:{ele:4,atk:4},fill:['crate','cdmg','cs','ammo'],maxAmmo:1,olNote:'Only 1 Max Ammo line unless you manually Quick Scope.'},
+jackal:{n:'Jackal',b:'B1',el:'iron',w:'RL',c:'Defender',pvp:'PvP 10/10',src:pry('jackal'),cube:'Quantum',why:'Prydwen’s pick: she is a pure battery.',alt:'Adjutant',sk:'4/4/4',want:{cs:4},fill:['atk','ele','def'],olNote:'RLs hit Charge Speed breakpoints in PvP. Other lines are CP.',doll:DR,front:1},
+noah:{n:'Noah',b:'B2',el:'wind',w:'RL',c:'Defender',pvp:'PvP 10/10',src:pry('noah'),cube:'Adjutant',why:'“Clear winner”: faster Full Charge, so her team invincibility lands before the enemy nuke.',alt:'Vigor',sk:'4/4/4',want:{cs:4},fill:['atk','ele'],doll:DR+': she sits in P1/P2',front:1},
+noise:{n:'Noise',b:'B1',el:'electric',w:'RL',c:'Supporter',pvp:'PvP 10/10',src:pry('noise'),cube:'Healing',why:'Prydwen’s go-to: she tanks in P1 and heals herself back up.',alt:'Vigor',sk:'4/4/7',skNote:'→ 7/7/10',want:{cs:4},fill:['atk','ele'],avoid:['ammo'],olNote:'No Max Ammo: she must reload to refresh her Max HP buff and self-heal.',doll:DR+': she sits in P1',front:1},
+cinderella:{n:'Cinderella',b:'B3',el:'electric',w:'RL',c:'Defender',pvp:'PvP 10/10',src:pry('cinderella'),cube:'Vigor',why:'Her Skill 1 turns HP into ATK, so Vigor’s extra Max HP becomes damage.',alt:'Bastion',sk:'10/4/10',skNote:'→ 10/7/10',want:{ele:4,atk:4,ammo:2},fill:['crate','cdmg'],olNote:'Prydwen calls 1 Max Ammo essential, 2 ideal.'},
+biscuit:{n:'Biscuit',b:'B2',el:'electric',w:'RL',c:'Supporter',pvp:'PvP 10/10',src:pry('biscuit'),cube:'Adjutant',why:'In PvP “you race to use your Bursts before the enemy”. Vigor only if Scarlet nukes keep killing her.',alt:'Vigor',sk:'4/4/7',skNote:'→ 4/4/10',want:{ele:4,atk:4,cs:2},fill:['ammo'],note:'Her immunity only covers a Defender under 50% HP: Moran, Noah or Cinderella in the stall.'},
+rumani:{n:'Rumani',b:'B1',el:'fire',w:'RL',c:'Defender',pvp:'PvP 8/10',src:pry('rumani'),cube:'Quantum',why:'Second battery next to Jackal in Defense 2, main battery in Attack 2.',alt:'Adjutant',sk:'4/4/4',skNote:'stop there',want:{cs:4},fill:['atk','ele','def'],note:'Taunts during Burst and works well with Biscuit.'},
+moran:{n:'Moran (Treasure)',b:'B1',el:'electric',w:'AR',c:'Defender',pvp:'PvP 10/10',src:pry('moran-treasure'),cube:'Tempering',why:'Prydwen’s first PvP pick: her kit stacks Damage Reduction.',alt:'Vigor',sk:'4/7/7',skNote:'→ 10/10/10 · Burst first in PvP',want:{ele:4,atk:4},fill:['cdmg','crate','def'],note:'“Must-have, must-build PvP unit.” Anchors your lifesteal stall with Helm.',front:1},
+bay:{n:'Bay (Treasure)',b:'B2',el:'fire',w:'RL',c:'Defender',pvp:'PvP 7/10',src:pry('bay-treasure'),cube:'Vigor',why:'She shares damage, so more Max HP means more soak.',alt:'Tempering',sk:'7/4/4',want:{cs:4},fill:['atk','ele','def'],doll:DR,front:1},
+sbs:{n:'Scarlet: Black Shadow',b:'B3',el:'wind',w:'RL',c:'Attacker',pvp:'PvP 9/10',src:pry('scarlet-black-shadow'),cube:'Resilience',why:'Bastion only wins with Alice. She has Alice on defense but not in Attack 2, and the arena cube is shared, so Resilience.',alt:'Bastion',sk:'10/7/10',want:{ele:4,atk:4,ammo:1,cs:1},fill:['cs'],maxAmmo:1,olNote:'Exactly 1 Max Ammo; 1 Charge Speed above 5% is enough.',doll:DR,note:'Blocked by Biscuit + a Defender, and by Sakura.'},
+alice:{n:'Alice',b:'B3',el:'fire',w:'SR',c:'Attacker',pvp:'PvP 4/10',src:pry('alice'),cube:'Bastion',why:'Bastion once she has 2–3 Max Ammo lines; she reloads a lot during Burst.',alt:'Resilience',sk:'10/4/10',want:{ele:4,atk:3,ammo:2,cs:2},fill:[],olNote:'First goal: over 99% Charge Speed from Skill 1 + Burst + Overload.'},
+anis:{n:'Anis',b:'B?',el:'iron',w:'RL',c:'Defender',pvp:'PvP 8/10',src:pry('anis'),cube:'Quantum',why:'One of Prydwen’s “Holy Trinity” Quantum units: pure burst gen.',alt:'Adjutant',sk:'1/1/1',skNote:'→ 4/4/4',want:{cs:4},fill:['atk','ele','def'],warn:'Prydwen lists Anis as Iron, but your formation screenshot showed this slot as B1 Electric. Check which Nikke it really is.'},
+rapunzel:{n:'Rapunzel',b:'B1',el:'iron',w:'RL',c:'Supporter',pvp:'PvP 8/10',src:pry('rapunzel'),cube:'Healing',why:'Prydwen’s go-to: bigger heals. Her revive doesn’t depend on the cube.',alt:'Vigor',sk:'4/4/4',skNote:'→ 7/4/4',want:{cs:4},fill:['ammo','ele','atk']},
+crown:{n:'Crown',b:'B2',el:'iron',w:'MG',c:'Defender',pvp:'PvP 5/10',src:pry('crown'),cube:'Resilience',why:'“Always use Resilience on Crown”: she buffs her own reload. Also her PvE cube.',alt:'Vigor',sk:'10/4/10',want:{ele:4,atk:4,ammo:2},fill:['crate','cdmg','ammo'],note:'Her ATK buff only hits units that use their Burst.'},
+redhood:{n:'Rapi: Red Hood',b:'B3',el:'fire',w:'MG',c:'Attacker',pvp:'PvP 5/10',src:pry('rapi-red-hood'),cube:'Resilience',why:'Crown in this team gives Reload Speed; Prydwen says Resilience wins in Crown comps.',alt:'Bastion',sk:'7/7/7',skNote:'→ 10/10/10',want:{ele:4,atk:4,ammo:2},fill:[],note:'Whole-screen AoE that wrecks Electric and Wind teams.'},
+marian:{n:'Marian: Queen',b:'B3',el:'fire',w:'MG',c:'Attacker',pvp:'PvP 8/10',src:pry('marian-queen'),cube:'Bastion',why:'The only damage cube on her PvP list; an MG wants to keep firing.',alt:'Tempering',sk:'7/7/7',skNote:'→ 10/10/10 · Skill 2 and Burst first',want:{ele:4,atk:4,ammo:1},fill:['crate','cdmg'],note:'Breaks stalls like Moran (Treasure) + Biscuit + Helm.'},
+mermaid:{n:'Little Mermaid',b:'B1',el:'wind',w:'SMG',c:'Supporter',pvp:'PvP 8/10',src:pry('siren'),cube:'Tempering',why:'She stuns the enemy P1 and may need Damage Reduction.',alt:'Bastion',sk:'7/7/7',skNote:'→ 10/10/7',want:{ele:4,atk:4},fill:['crate','cdmg','ammo'],doll:DR}
+};
+const T=[
+ {id:'def-1',label:'Defense 1',name:'Lifesteal stall',where:'New. Moran (Treasure) taunts and stacks Damage Reduction, Helm heals and bursts fastest, Noah and Biscuit cover the opening nuke, Cinderella wipes.',u:['moran','noah','cinderella','biscuit','helm']},
+ {id:'def-2',label:'Defense 2',name:'SGD pierce',where:'Blanc protects, SGD cleaves P1–P4, Jackal and Rumani race the burst.',u:['blanc','sgd','grave','jackal','rumani']},
+ {id:'def-3',label:'Defense 3',name:'SBS nuke',where:'Noise tanks in P1, Bay soaks, SBS and Alice nuke. Punishes attackers who spent their Biscuit on the stall.',u:['noise','bay','sbs','alice','anis']},
+ {id:'atk-1',label:'Attack 1',name:'SGD pierce',where:'Send at fast teams that rely on Noah’s 3-second immunity. Avoid lifesteal stalls and Water nukers.',u:['blanc','sgd','grave','helm','jackal']},
+ {id:'atk-2',label:'Attack 2',name:'SBS counter',where:'Send at the team without Biscuit + a Defender, and without Sakura.',u:['noah','biscuit','sbs','rapunzel','rumani']},
+ {id:'atk-3',label:'Attack 3',name:'Anti-stall',where:'Send at lifesteal stalls (Moran + Biscuit + Helm) and Electric/Wind-heavy teams. Moran replaces Noise in P1.',u:['moran','crown','redhood','marian','mermaid']},
+ {id:'queue',label:'Upgrade queue',name:'Upgrade queue'},
+ {id:'rules',label:'Rules',name:'Rules and counters'}
+];
+const ELN={fire:'Fire',water:'Water',wind:'Wind',electric:'Electric',iron:'Iron'};
+let done={};try{done=JSON.parse(localStorage.getItem('nikke-todo')||'{}')}catch(e){}
+const save=()=>{try{localStorage.setItem('nikke-todo',JSON.stringify(done))}catch(e){}};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const img=k=>`img/${k}.webp`;
+const cubeName=s=>(s||'').replace(/ \d+$/,'');
+/* analysis */
+const analyse=k=>{const x=U[k],c=CUR[k];const lines=c.pieces.flat().filter(Boolean);const rows=[];
+ for(const [e,n] of Object.entries(x.want)){const have=lines.filter(l=>l[0]===e);const good=have.filter(l=>!MIN[e]||l[1]>=MIN[e]).length;const low=have.length-good;rows.push({e,n,good,low,st:good>=n?'ok':(good+low>=n?'low':'bad')})}
+ const avoidHit=lines.filter(l=>(x.avoid||[]).includes(l[0])).length;
+ const ammoOver=x.maxAmmo!=null?Math.max(0,lines.filter(l=>l[0]==='ammo').length-x.maxAmmo):0;
+ const skC=c.sk.split('/').map(Number),skT=x.sk.split('/').map(Number);const skGap=skC.map((v,i)=>skT[i]-v);
+ const steps=[];const P=(p,t,key)=>steps.push({p,t,key:k+':'+key});
+ if(cubeName(c.cube)!==x.cube)P(1,`Arena cube: swap ${cubeName(c.cube)} → ${x.cube}`,'cube');
+ if(avoidHit)P(1,`Change Effects on the piece with Max Ammo: she shouldn’t have it`,'avoid');
+ if(ammoOver)P(2,`Too many Max Ammo lines (${ammoOver} extra): replace with a target line`,'ammo');
+ for(const r of rows){if(r.st==='ok')continue;const miss=r.n-r.good-r.low;const op=OLP[k]||3;if(miss>0)P(op,`Overload: add ${miss}× ${EF[r.e]} (have ${r.good+r.low} of ${r.n})`,'add-'+r.e);if(r.low>0)P(op,`Reset Attributes: ${r.low}× ${EF[r.e]} below ${MIN[r.e]}%`,'low-'+r.e)}
+ if(c.lvl===0)P(2,'Enhance all 4 Overload pieces from level 0 to 5','lvl');
+ skGap.forEach((g,i)=>{if(g>0)P(3,`Skill ${i===2?'Burst':i+1}: ${skC[i]} → ${skT[i]}`,'sk'+i)});
+ if(x.front&&/SR Phase ([0-9]+)/.test(c.doll)&&+RegExp.$1<15)P(2,`Level her doll (${c.doll}) for ${DR}: she’s on the front line`,'doll');
+ const score=rows.length?Math.round(100*rows.reduce((a,r)=>a+Math.min(r.n,r.good+r.low*0.5)/r.n,0)/rows.length):null;
+ return {rows,steps,skC,skT,score}};
+const A={};for(const k in U)A[k]=analyse(k);
+const lnCls=(k,l)=>{const x=U[k];if(!l)return'empty';const[e,v]=l;if((x.avoid||[]).includes(e))return'bad';if(x.want[e])return (!MIN[e]||v>=MIN[e])?'ok':'low';if(x.fill.includes(e))return'fill';return'no'};
+const others=(k,tid)=>T.filter(t=>t.u&&t.id!==tid&&t.u.includes(k)).map(t=>t.label);
+const todo=s=>`<li><label class="${done[s.key]?'done':''}"><input type="checkbox" data-t="${s.key}" ${done[s.key]?'checked':''}><span><b class="pri p${s.p}">${['','Now','Next','Later'][s.p]}</b>${esc(s.t)}</span></label></li>`;
+const card=(k,tid,pos)=>{const x=U[k],c=CUR[k],a=A[k],also=others(k,tid);
+ const skHtml=a.skC.map((v,i)=>`<span class="st ${v>=a.skT[i]?'ok':'low'}">${v}</span>`).join(' / ');
+ const olTable=a.rows.length?`<table class="ol"><thead><tr><th>Effect</th><th>Target</th><th>You have</th><th></th></tr></thead><tbody>${a.rows.map(r=>`<tr><td>${EF[r.e]}</td><td class="n">${r.n}×</td><td class="n">${r.good}${r.low?` + ${r.low} low`:''}</td><td><span class="st ${r.st}">${r.st==='ok'?'Done':r.st==='low'?'Values low':'Missing'}</span></td></tr>`).join('')}</tbody></table>`:'';
+ const pieces=`<div class="pieces">${c.pieces.map((p,i)=>`<div class="pc"><i>Piece ${i+1}${c.lvl===0?' · lvl 0':''}</i>${p.map(l=>l?`<span class="ln ${lnCls(k,l)}"><span>${EF[l[0]]}</span><span>${l[1]}%</span></span>`:'<span class="ln empty">—</span>').join('')}</div>`).join('')}</div>`;
+ return `<article class="card" id="u-${k}" style="--el:var(--${x.el})">
+<div class="ch"><img src="${img(k)}" alt="" loading="lazy"><div>${pos?`<div class="src">P${pos}${also.length?' · also in '+also.join(', '):''}</div>`:''}<h3>${esc(x.n)}</h3><div class="chips"><span class="chip">${x.b}</span><span class="chip el">${ELN[x.el]}</span><span class="chip">${x.w}</span><span class="chip">${x.c}</span><span class="chip pvp">${esc(x.pvp)}</span><span class="chip">CP ${c.pw.toLocaleString('en')}</span></div></div></div>
+${x.warn?`<div class="warn">${esc(x.warn)}</div>`:''}
+<div class="sec"><h4>Target build</h4><div class="kv">
+<span>Arena cube</span><div class="pick"><b>${x.cube}</b><p>${esc(x.why)}</p><p class="small">Backup: ${x.alt}</p></div>
+<span>Skills (PvP)</span><p>${x.sk}${x.skNote?' <span class="small">'+esc(x.skNote)+'</span>':''}</p>
+<span>Overload</span><p>${a.rows.length?a.rows.map(r=>r.n+'× '+EF[r.e]).join(', '):'—'}${x.fill.length?'<br><span class="small">Filler: '+x.fill.map(f=>EF[f]).join(', ')+'</span>':''}${x.olNote?'<br><span class="small">'+esc(x.olNote)+'</span>':''}</p>
+${x.doll?`<span>Doll</span><p>${esc(x.doll)}</p>`:''}${x.note?`<span>Notes</span><p>${esc(x.note)}</p>`:''}
+</div></div>
+<div class="sec"><h4>Your Nikke now</h4><div class="kv">
+<span>Skills</span><p>${skHtml}</p>
+<span>Arena cube</span><p><span class="st ${cubeName(c.cube)===x.cube?'ok':'bad'}">${esc(c.cube.replace(/ (\d+)$/,' · Lv $1'))}</span></p>
+<span>Doll</span><p>${esc(c.doll)}</p>
+</div>${olTable}${pieces}</div>
+<div class="sec"><h4>Next steps</h4>${a.steps.length?`<ul class="todo">${a.steps.map(todo).join('')}</ul>`:'<p class="small">Nothing urgent. She matches the target build.</p>'}</div>
+<div class="src"><a href="${x.src}">Prydwen build</a></div></article>`};
+const rules=`<div class="card"><h3>Which attack team not to send</h3><table class="ct stack"><thead><tr><th>Enemy team has</th><th>Don’t send</th><th>Send instead</th></tr></thead><tbody>
+<tr><td>Biscuit + a Defender</td><td>Attack 2 (SBS)</td><td>Attack 1, or swap SBS for Cinderella</td></tr>
+<tr><td>Sakura</td><td>Attack 2 (SBS)</td><td>Attack 1 or 3</td></tr>
+<tr><td>Moran (Treasure) + Helm lifesteal stall</td><td>Attack 1 (SGD)</td><td>Attack 3: Marian: Queen breaks it</td></tr>
+<tr><td>Fire nuker (SGD, Marian: Queen, Rapi: Red Hood)</td><td>Attack 2 (Noah, SBS are Wind)</td><td>Attack 1 or 3</td></tr>
+<tr><td>Water nuker</td><td>Attack 1 or 3 (two Fire units)</td><td>Attack 2</td></tr>
+</tbody></table><p class="small" style="margin-top:8px">Element cycle: Fire › Wind › Iron › Electric › Water › Fire.</p></div>
+${[['Burst order','Every team needs at least one B1, one B2 and one B3.'],['No repeats per side','Each Nikke once across your three defense teams, and once across your three attack teams. Attack and defense can share.'],['One arena cube per Nikke','Arena and Battle have separate cube slots. The arena cube is used in every arena team she’s in.'],['Overload minimums','Below these, a target line counts as half: Elemental Damage 19.35%, ATK 9.70%, Max Ammo 52.50%, Charge Speed 4.04%. A piece can’t roll the same effect twice. Stop at two good lines per piece.'],['Tanks want Damage Reduction','Front-liners get a Damage Reduction doll plus Vigor, Tempering or Healing.']].map(([h,p])=>`<div class="card"><h3>${h}</h3><p>${p}</p></div>`).join('')}`;
+const queue=()=>{const all=[];const seen=new Set();for(const t of T)if(t.u)for(const k of t.u){if(seen.has(k))continue;seen.add(k);for(const s of A[k].steps)all.push({...s,k})}
+ all.sort((a,b)=>a.p-b.p);const open=all.filter(s=>!done[s.key]).length;
+ return `<div class="teamhead"><h2>Upgrade queue</h2><span class="where">${open} of ${all.length} steps open, most urgent first. “Now” = cheap or big impact.</span></div><div class="queue" style="margin-top:14px">${all.map(s=>`<div class="qrow ${done[s.key]?'done':''}"><img src="${img(s.k)}" alt=""><label><input type="checkbox" data-t="${s.key}" ${done[s.key]?'checked':''}><span><b class="pri p${s.p}">${['','Now','Next','Later'][s.p]}</b><b>${esc(U[s.k].n)}</b> · ${esc(s.t)}</span></label></div>`).join('')}</div>`};
+const tabs=document.getElementById('tabs'),view=document.getElementById('view'),q=document.getElementById('q');
+tabs.innerHTML=T.map(t=>`<button class="tab" role="tab" data-id="${t.id}" aria-selected="false">${t.label}</button>`).join('');
+const render=id=>{const t=T.find(x=>x.id===id)||T[0];
+ tabs.querySelectorAll('.tab').forEach(b=>b.setAttribute('aria-selected',b.dataset.id===t.id));
+ if(t.id==='queue'){view.innerHTML=queue();return}
+ if(t.id==='rules'){view.innerHTML=`<div class="teamhead"><h2>${t.name}</h2></div><div class="rules" style="margin-top:14px">${rules}</div>`;return}
+ view.innerHTML=`<div class="teamhead"><h2>${t.label}: ${t.name}</h2><span class="where">${esc(t.where)}</span></div>
+<div class="strip">${t.u.map((k,i)=>{const x=U[k],a=A[k];return `<button class="slot" style="--el:var(--${x.el})" data-go="${k}"><img src="${img(k)}" alt=""><span class="bn">${x.b}</span>${a.score!=null?`<span class="score">OL ${a.score}%</span>`:''}<span class="meta"><span class="p">P${i+1} · ${ELN[x.el]}</span><b>${esc(x.n)}</b></span></button>`}).join('')}</div>
+<div class="grid">${t.u.map((k,i)=>card(k,t.id,i+1)).join('')}</div>`};
+const search=s=>{s=s.trim().toLowerCase();if(!s){route();return}const ks=Object.keys(U).filter(k=>U[k].n.toLowerCase().includes(s));
+ tabs.querySelectorAll('.tab').forEach(b=>b.setAttribute('aria-selected','false'));
+ view.innerHTML=`<div class="teamhead"><h2>Search</h2><span class="where">${ks.length} Nikke</span></div>`+(ks.length?`<div class="grid" style="margin-top:14px">${ks.map(k=>card(k,'')).join('')}</div>`:`<p class="empty">No Nikke matches “${esc(s)}”.</p>`)};
+const route=()=>render((location.hash||'').slice(1));
+tabs.addEventListener('click',e=>{const b=e.target.closest('.tab');if(!b)return;q.value='';if(location.hash==='#'+b.dataset.id)route();else location.hash=b.dataset.id});
+view.addEventListener('click',e=>{const s=e.target.closest('[data-go]');if(!s)return;const c=document.getElementById('u-'+s.dataset.go);if(!c)return;c.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth',block:'start'});c.classList.add('hit');setTimeout(()=>c.classList.remove('hit'),1400)});
+view.addEventListener('change',e=>{const k=e.target.dataset&&e.target.dataset.t;if(!k)return;done[k]=e.target.checked;save();document.querySelectorAll(`input[data-t="${CSS.escape(k)}"]`).forEach(i=>{i.checked=done[k];const r=i.closest('label,.qrow');if(r)r.classList.toggle('done',done[k]);const l=i.closest('label');if(l)l.classList.toggle('done',done[k])})});
+q.addEventListener('input',()=>search(q.value));
+window.addEventListener('hashchange',()=>{q.value='';route()});
+route();
+}
+</script>
+</body>
+</html>

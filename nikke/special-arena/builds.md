@@ -1,219 +1,357 @@
-# Special Arena unit builds
+# Special Arena builds and upgrade plan
 
-Checked on Prydwen character pages (Investment tips), 2026-11-20. Where Prydwen lists several cubes, the **cube pick** and its reason are Claude's call for that team; everything else is Prydwen's.
+Targets from Prydwen (checked 2026-11-20). Current values read from ShiftyPad on 2026-11-20 (raw data: [page/current-stats.json](page/current-stats.json)). Interactive version with portraits and checklists: [page/index.html](page/index.html) · https://claude.ai/artifact/D4MqEfDZE4GaZykHfAyedW
 
-Interactive version: [builds.html](builds.html) · https://claude.ai/artifact/D4MqEfDZE4GaZykHfAyedW
+## Defense 1: Lifesteal stall
 
-## SGD Pierce — Defense Squad 1 and Attack Round 1 (same five units)
+New. Moran (Treasure) taunts and stacks Damage Reduction, Helm heals and bursts fastest, Noah and Biscuit cover the opening nuke, Cinderella wipes.
 
-### P1 · Blanc (B2, wind, AR, Defender, PvP 10/10)
+### P1 · Moran (Treasure) (B1, electric, AR, PvP 10/10)
 
-- **Cube: Vigor** — More Max HP means bigger heals and a sturdier P1. Prydwen lists it first for PvP. _(backup: Healing)_
-- **Overload:** None needed: Overload is CP padding only
-- **Skills (PvP):** 1/1/4 → 4/4/7 → 4/4/10 (Burst first)
-- **Doll:** Damage Reduction: she sits near P1 and eats the opening hits
-- Source: https://prydwen.gg/nikke/characters/blanc
+| | Target | Now |
+|---|---|---|
+| Arena cube | Tempering | Vigor 6 |
+| Skills (PvP) | 4/7/7 | 10/10/10 |
+| Overload | 4× Elemental Dmg, 4× ATK | 1× Elemental Dmg, 1× ATK |
+| Doll | — | Treasure Phase 3 |
 
-### P2 · Scarlet: Goddeath (B3, fire, AR, Attacker, PvP 10/10)
+Next: **Now** — Arena cube: swap Vigor → Tempering; Next — Overload: add 3× Elemental Dmg (have 1 of 4); Next — Overload: add 3× ATK (have 1 of 4)
 
-- **Cube: Tempering** — Prydwen wants Damage Taken Reduction on her in PvP, and Tempering is the survival pick. Resilience is her PvE cube, not PvP. _(backup: Vigor)_
-- **Overload:** 4× Elemental Damage, 4× ATK. Filler: Crit Damage over Crit Rate: Grave buffs Pierce, and Pierce favours Crit Damage
-- **Skills (PvP):** 4/4/4 → 4/4/4 → 7/7/7 (→ 10/10/10) · Burst and Skill 1 matter most
-- **Doll:** Damage Reduction
-- **Notes:** Prydwen confirms her “Clip RL-level burst gen”, so she doubles as a burst battery.
-- Source: https://prydwen.gg/nikke/characters/scarlet-goddeath
+### P2 · Noah (B2, wind, RL, PvP 10/10)
 
-### P3 · Grave (B2, fire, AR, Supporter, PvP 3/10)
+| | Target | Now |
+|---|---|---|
+| Arena cube | Adjutant | Adjutant 6 |
+| Skills (PvP) | 4/4/4 | 4/4/4 |
+| Overload | 4× Charge Speed | 1× Charge Speed |
+| Doll | Damage Reduction: she sits in P1/P2 | SR Phase 15 |
 
-- **Cube: Vigor** — She needs no special cube. Vigor keeps her alive because Blanc is this team’s only healer. _(backup: Tempering)_
-- **Overload:** 4× Elemental Damage, 4× ATK, 4× Crit Damage
-- **Skills (PvP):** 4/4/4 → 4/4/7 → 4/4/10 (→ 4/7/10) · max Burst first
-- **Doll:** Damage Reduction
-- **Notes:** Overload your DPS units before her.
-- Source: https://prydwen.gg/nikke/characters/grave
+Next: Later — Overload: add 3× Charge Speed (have 1 of 4)
 
-### P4 · Helm (Treasure) (B3, water, SR, Attacker, PvP 10/10)
+### P3 · Cinderella (B3, electric, RL, PvP 10/10)
 
-- **Cube: Quantum** — Prydwen calls her the “best burst gen in the game”. Quantum multiplies it, so this team reaches Full Burst first. _(backup: Vigor)_
-- **Overload:** 4× Elemental Damage, 4× ATK. Filler: Crit Rate/Damage, Charge Speed, 1× Max Ammo. **Avoid:** More than 1 Max Ammo, unless you manually Quick Scope
-- **Skills (PvP):** 4/4/4 → 7/4/4 → 10/7/7 (→ 10/10/10)
-- Source: https://prydwen.gg/nikke/characters/helm-treasure
+| | Target | Now |
+|---|---|---|
+| Arena cube | Vigor | Vigor 6 |
+| Skills (PvP) | 10/4/10 | 10/10/10 |
+| Overload | 4× Elemental Dmg, 4× ATK, 2× Max Ammo | 3+1 low× Elemental Dmg, 2× ATK, 0× Max Ammo |
+| Doll | — | SR Phase 15 |
 
-### P5 · Jackal (B1, iron, RL, Defender, PvP 10/10)
+Next: **Now** — Reset Attributes: 1× Elemental Dmg below 19.35%; **Now** — Overload: add 2× ATK (have 2 of 4); **Now** — Overload: add 2× Max Ammo (have 0 of 2)
 
-- **Cube: Quantum** — Prydwen’s pick for her. With Helm on Quantum too, this is your fastest-bursting team. _(backup: Adjutant)_
-- **Overload:** 4× Charge Speed (RLs hit Charge Speed breakpoints in PvP). Filler: ATK, Elemental Damage, DEF
-- **Skills (PvP):** 1/1/1 → 4/4/4
-- **Doll:** Damage Reduction
-- Source: https://prydwen.gg/nikke/characters/jackal
+### P4 · Biscuit (B2, electric, RL, PvP 10/10)
 
-## Stall — Defense Squad 2
+| | Target | Now |
+|---|---|---|
+| Arena cube | Adjutant | Adjutant 6 |
+| Skills (PvP) | 4/4/7 | 4/4/10 |
+| Overload | 4× Elemental Dmg, 4× ATK, 2× Charge Speed | 3× Elemental Dmg, 1× ATK, 0× Charge Speed |
+| Doll | — | SR Phase 6 |
 
-### P1 · Noah (B2, wind, RL, Defender, PvP 10/10)
+Next: Later — Overload: add 1× Elemental Dmg (have 3 of 4); Later — Overload: add 3× ATK (have 1 of 4); Later — Overload: add 2× Charge Speed (have 0 of 2)
 
-- **Cube: Adjutant** — Prydwen calls it the “clear winner”. She reaches Full Charge faster, so team invincibility lands before the enemy nuke. _(backup: Vigor)_
-- **Overload:** 4× Charge Speed. Filler: ATK, Elemental Damage
-- **Skills (PvP):** 1/1/1 → 4/4/4
-- **Doll:** Damage Reduction: she sits in P1
-- Source: https://prydwen.gg/nikke/characters/noah
+### P5 · Helm (Treasure) (B3, water, SR, PvP 10/10)
 
-### P2 · Noise (B1, electric, RL, Supporter, PvP 10/10)
+| | Target | Now |
+|---|---|---|
+| Arena cube | Quantum | Quantum 6 |
+| Skills (PvP) | 10/7/7 | 10/10/10 |
+| Overload | 4× Elemental Dmg, 4× ATK | 1+1 low× Elemental Dmg, 1× ATK |
+| Doll | — | Treasure Phase 3 |
 
-- **Cube: Healing** — Prydwen’s go-to. Her job is to tank in P1/P2 and heal herself back up. _(backup: Vigor)_
-- **Overload:** 4× Charge Speed. Filler: ATK, Elemental Damage. **Avoid:** Max Ammo: she must reload to refresh her Max HP buff and self-heal
-- **Skills (PvP):** 1/4/4 → 4/4/7 (→ 7/7/10)
-- **Doll:** Damage Reduction. Her doll also boosts her team Max HP buff, which feeds Cinderella
-- Source: https://prydwen.gg/nikke/characters/noise
+Next: Next — Overload: add 2× Elemental Dmg (have 2 of 4); Next — Reset Attributes: 1× Elemental Dmg below 19.35%; Next — Overload: add 3× ATK (have 1 of 4)
 
-### P3 · Cinderella (B3, electric, RL, Defender, PvP 10/10)
+## Defense 2: SGD pierce
 
-- **Cube: Vigor** — Her Skill 1 turns HP into ATK, and Noise buffs team Max HP. Vigor stacks on both, so she hits harder. _(backup: Bastion)_
-- **Overload:** 4× Elemental Damage, 4× ATK, 2× Max Ammo. Filler: 1–3× Crit Rate/Damage, 1–2× Max Ammo
-- **Skills (PvP):** 4/4/4 → 7/4/7 → 10/4/10 (→ 10/7/10)
-- Source: https://prydwen.gg/nikke/characters/cinderella
+Blanc protects, SGD cleaves P1–P4, Jackal and Rumani race the burst.
 
-### P4 · Biscuit (B2, electric, RL, Supporter, PvP 10/10)
+### P1 · Blanc (B2, wind, AR, PvP 10/10)
 
-- **Cube: Adjutant** — Prydwen: in PvP “you race to use your Bursts before the enemy”. Switch to Vigor only if Scarlet nukes keep killing her. _(backup: Vigor)_
-- **Overload:** 4× Elemental Damage, 4× ATK, 2–4× Charge Speed. Filler: 0–2× Max Ammo
-- **Skills (PvP):** 1/1/1 → 4/4/4 → 4/4/7 (→ 4/4/10)
-- **Notes:** Her immunity only protects a Defender under 50% HP. Here that’s Noah, Cinderella or Rumani.
-- Source: https://prydwen.gg/nikke/characters/biscuit
+| | Target | Now |
+|---|---|---|
+| Arena cube | Vigor | Vigor 6 |
+| Skills (PvP) | 4/4/10 | 4/5/10 |
+| Overload | CP padding only | — |
+| Doll | Damage Reduction: she sits in P1 | SR Phase 5 |
 
-### P5 · Rumani (B1, fire, RL, Defender, PvP 8/10)
+Next: Next — Level her doll (SR Phase 5) for Damage Reduction: she’s on the front line
 
-- **Cube: Quantum** — This team has no Jackal or Helm, so Rumani is the main battery. Quantum on her speeds up the whole stall. _(backup: Adjutant)_
-- **Overload:** 4× Charge Speed. Filler: ATK, Elemental Damage, DEF
-- **Skills (PvP):** 1/1/1 → 4/4/4 · stop there
-- **Notes:** Taunts during Burst and works well with Biscuit.
-- Source: https://prydwen.gg/nikke/characters/rumani
+### P2 · Scarlet: Goddeath (B3, fire, AR, PvP 10/10)
 
-## SBS Nuke — Defense Squad 3
+| | Target | Now |
+|---|---|---|
+| Arena cube | Tempering | Tempering 6 |
+| Skills (PvP) | 7/7/7 | 10/10/10 |
+| Overload | 4× Elemental Dmg, 4× ATK | 1+3 low× Elemental Dmg, 0+1 low× ATK |
+| Doll | Damage Reduction | SR Phase 15 |
 
-### P1 · Moran (Treasure) (B1, electric, AR, Defender, PvP 10/10)
+Next: **Now** — Reset Attributes: 3× Elemental Dmg below 19.35%; **Now** — Overload: add 3× ATK (have 1 of 4); **Now** — Reset Attributes: 1× ATK below 9.7%
 
-- **Cube: Tempering** — Prydwen’s first PvP pick for her: her kit stacks Damage Reduction. You have Tempering on her Battle slot but Vigor on Arena: swap. _(backup: Vigor)_
-- **Overload:** 4× Elemental Damage, 4× ATK. Filler: Crit Damage, Crit Rate, DEF
-- **Skills (PvP):** 4/4/4 → 4/4/4 → 4/7/7 (→ 10/10/10) · Burst first in PvP (Damage Reduction)
-- **Notes:** Prydwen: “must-have, must-build PvP unit”. With Helm (Treasure) she forms the lifesteal stall that SGD teams struggle against.
-- Source: https://prydwen.gg/nikke/characters/moran-treasure
+### P3 · Grave (B2, fire, AR, PvP 3/10)
 
-### P2 · Bay (Treasure) (B2, fire, RL, Defender, PvP 7/10)
+| | Target | Now |
+|---|---|---|
+| Arena cube | Vigor | Vigor 6 |
+| Skills (PvP) | 4/4/10 | 4/7/10 |
+| Overload | 4× Elemental Dmg, 4× ATK, 4× Crit Damage | 0× Elemental Dmg, 1× ATK, 2× Crit Damage |
+| Doll | Damage Reduction | SR Phase 5 |
 
-- **Cube: Vigor** — She shares damage, so more Max HP means more soak. Prydwen lists Vigor first for PvP. _(backup: Tempering)_
-- **Overload:** 4× Charge Speed. Filler: ATK, Elemental Damage, DEF
-- **Skills (PvP):** 1/1/1 → 4/4/4 → 7/4/4
-- **Doll:** Damage Reduction
-- Source: https://prydwen.gg/nikke/characters/bay-treasure
+Next: Later — Overload: add 4× Elemental Dmg (have 0 of 4); Later — Overload: add 3× ATK (have 1 of 4); Later — Overload: add 2× Crit Damage (have 2 of 4); Next — Enhance all 4 Overload pieces from level 0 to 5
 
-### P3 · Scarlet: Black Shadow (B3, wind, RL, Attacker, PvP 9/10)
+### P4 · Jackal (B1, iron, RL, PvP 10/10)
 
-- **Cube: Resilience** — Bastion only beats it with Alice on the team. SBS has Alice on defense but not in Attack Round 2, and the cube stays on her for both, so Resilience works everywhere. _(backup: Bastion)_
-- **Overload:** 1× Max Ammo, 1× Charge Speed above 5%, 4× Elemental Damage, 4× ATK. Filler: Up to 3× more Charge Speed
-- **Skills (PvP):** 4/4/4 → 7/4/7 → 10/7/10
-- **Doll:** Damage Reduction
-- **Notes:** Blocked by Biscuit. Against teams without Biscuit, she’s powerful.
-- Source: https://prydwen.gg/nikke/characters/scarlet-black-shadow
+| | Target | Now |
+|---|---|---|
+| Arena cube | Quantum | Quantum 6 |
+| Skills (PvP) | 4/4/4 | 4/4/4 |
+| Overload | 4× Charge Speed | 1× Charge Speed |
+| Doll | Damage Reduction | SR Phase 15 |
 
-### P4 · Alice (B3, fire, SR, Attacker, PvP 4/10)
+Next: Later — Overload: add 3× Charge Speed (have 1 of 4)
 
-- **Cube: Bastion** — She reloads a lot during Burst. Once she has 2–3 Max Ammo lines Prydwen prefers Bastion. Use Resilience until then. _(backup: Resilience)_
-- **Overload:** 2× Charge Speed, 3–4× ATK, 2–3× Max Ammo, 4× Elemental Damage
-- **Skills (PvP):** 1/1/1 → 10/4/10
-- **Notes:** First goal: over 99% Charge Speed from Skill 1 + Burst + Overload.
-- Source: https://prydwen.gg/nikke/characters/alice
+### P5 · Rumani (B1, fire, RL, PvP 8/10)
 
-### P5 · Anis (B?, iron, RL, Defender, PvP 8/10)
+| | Target | Now |
+|---|---|---|
+| Arena cube | Quantum | Quantum 6 |
+| Skills (PvP) | 4/4/4 | 4/4/4 |
+| Overload | 4× Charge Speed | 1× Charge Speed |
+| Doll | — | SR Phase 5 |
 
-> ⚠ Prydwen lists Anis as an Iron Defender, but your Squad 3 P5 shows B1 Electric. That’s probably a different Nikke. Tell me who and I’ll swap in her build.
+Next: Later — Overload: add 3× Charge Speed (have 1 of 4); Next — Enhance all 4 Overload pieces from level 0 to 5
 
-- **Cube: Quantum** — One of Prydwen’s “Holy Trinity” Quantum units: she’s pure burst gen. _(backup: Adjutant)_
-- **Overload:** 4× Charge Speed. Filler: ATK, Elemental Damage, DEF
-- **Skills (PvP):** 1/1/1 (→ 4/4/4)
-- **Doll:** Damage Reduction and CP: she’s an SR
-- Source: https://prydwen.gg/nikke/characters/anis
+## Defense 3: SBS nuke
 
-## SBS Counter — Attack Round 2 — send at the team without Biscuit
+Noise tanks in P1, Bay soaks, SBS and Alice nuke. Punishes attackers who spent their Biscuit on the stall.
 
-### P1 · Noah (B2, wind, RL, Defender, PvP 10/10)
+### P1 · Noise (B1, electric, RL, PvP 10/10)
 
-- **Cube: Adjutant** — Prydwen calls it the “clear winner”. She reaches Full Charge faster, so team invincibility lands before the enemy nuke. _(backup: Vigor)_
-- **Overload:** 4× Charge Speed. Filler: ATK, Elemental Damage
-- **Skills (PvP):** 1/1/1 → 4/4/4
-- **Doll:** Damage Reduction: she sits in P1
-- Source: https://prydwen.gg/nikke/characters/noah
+| | Target | Now |
+|---|---|---|
+| Arena cube | Healing | Healing 6 |
+| Skills (PvP) | 4/4/7 | 7/7/10 |
+| Overload | 4× Charge Speed | 0× Charge Speed |
+| Doll | Damage Reduction: she sits in P1 | SR Phase 5 |
 
-### P2 · Biscuit (B2, electric, RL, Supporter, PvP 10/10)
+Next: **Now** — Change Effects on the piece with Max Ammo: she shouldn’t have it; Later — Overload: add 4× Charge Speed (have 0 of 4); Next — Enhance all 4 Overload pieces from level 0 to 5; Next — Level her doll (SR Phase 5) for Damage Reduction: she’s on the front line
 
-- **Cube: Adjutant** — Prydwen: in PvP “you race to use your Bursts before the enemy”. Switch to Vigor only if Scarlet nukes keep killing her. _(backup: Vigor)_
-- **Overload:** 4× Elemental Damage, 4× ATK, 2–4× Charge Speed. Filler: 0–2× Max Ammo
-- **Skills (PvP):** 1/1/1 → 4/4/4 → 4/4/7 (→ 4/4/10)
-- **Notes:** Her immunity only protects a Defender under 50% HP. Here that’s Noah, Cinderella or Rumani.
-- Source: https://prydwen.gg/nikke/characters/biscuit
+### P2 · Bay (Treasure) (B2, fire, RL, PvP 7/10)
 
-### P3 · Scarlet: Black Shadow (B3, wind, RL, Attacker, PvP 9/10)
+| | Target | Now |
+|---|---|---|
+| Arena cube | Vigor | Tempering 6 |
+| Skills (PvP) | 7/4/4 | 10/10/10 |
+| Overload | 4× Charge Speed | 1× Charge Speed |
+| Doll | Damage Reduction | Treasure Phase 3 |
 
-- **Cube: Resilience** — Bastion only beats it with Alice on the team. SBS has Alice on defense but not in Attack Round 2, and the cube stays on her for both, so Resilience works everywhere. _(backup: Bastion)_
-- **Overload:** 1× Max Ammo, 1× Charge Speed above 5%, 4× Elemental Damage, 4× ATK. Filler: Up to 3× more Charge Speed
-- **Skills (PvP):** 4/4/4 → 7/4/7 → 10/7/10
-- **Doll:** Damage Reduction
-- **Notes:** Blocked by Biscuit. Against teams without Biscuit, she’s powerful.
-- Source: https://prydwen.gg/nikke/characters/scarlet-black-shadow
+Next: **Now** — Arena cube: swap Tempering → Vigor; Later — Overload: add 3× Charge Speed (have 1 of 4); Next — Enhance all 4 Overload pieces from level 0 to 5
 
-### P4 · Rapunzel (B1, iron, RL, Supporter, PvP 8/10)
+### P3 · Scarlet: Black Shadow (B3, wind, RL, PvP 9/10)
 
-- **Cube: Healing** — Prydwen’s go-to: bigger heals. Her revive doesn’t depend on the cube. _(backup: Vigor)_
-- **Overload:** 4× Charge Speed. Filler: 2–4× Max Ammo, Elemental Damage, ATK
-- **Skills (PvP):** 1/1/1 → 4/4/4 (→ 7/4/4)
-- **Doll:** Damage Reduction keeps her alive (less urgent: her revive doesn’t rely on it)
-- Source: https://prydwen.gg/nikke/characters/rapunzel
+| | Target | Now |
+|---|---|---|
+| Arena cube | Resilience | Resilience 15 |
+| Skills (PvP) | 10/7/10 | 10/7/10 |
+| Overload | 4× Elemental Dmg, 4× ATK, 1× Max Ammo, 1× Charge Speed | 0× Elemental Dmg, 1+1 low× ATK, 0× Max Ammo, 0× Charge Speed |
+| Doll | Damage Reduction | SR Phase 15 |
 
-### P5 · Rumani (B1, fire, RL, Defender, PvP 8/10)
+Next: **Now** — Overload: add 4× Elemental Dmg (have 0 of 4); **Now** — Overload: add 2× ATK (have 2 of 4); **Now** — Reset Attributes: 1× ATK below 9.7%; **Now** — Overload: add 1× Max Ammo (have 0 of 1); **Now** — Overload: add 1× Charge Speed (have 0 of 1)
 
-- **Cube: Quantum** — This team has no Jackal or Helm, so Rumani is the main battery. Quantum on her speeds up the whole stall. _(backup: Adjutant)_
-- **Overload:** 4× Charge Speed. Filler: ATK, Elemental Damage, DEF
-- **Skills (PvP):** 1/1/1 → 4/4/4 · stop there
-- **Notes:** Taunts during Burst and works well with Biscuit.
-- Source: https://prydwen.gg/nikke/characters/rumani
+### P4 · Alice (B3, fire, SR, PvP 4/10)
 
-## Throwaway — Attack Round 3 — Noise goes in P1
+| | Target | Now |
+|---|---|---|
+| Arena cube | Bastion | Bastion 13 |
+| Skills (PvP) | 10/4/10 | 10/4/10 |
+| Overload | 4× Elemental Dmg, 3× ATK, 2× Max Ammo, 2× Charge Speed | 1× Elemental Dmg, 2× ATK, 1× Max Ammo, 0+1 low× Charge Speed |
+| Doll | — | SR Phase 15 |
 
-### P1 · Noise (B1, electric, RL, Supporter, PvP 10/10)
+Next: Next — Overload: add 3× Elemental Dmg (have 1 of 4); Next — Overload: add 1× ATK (have 2 of 3); Next — Overload: add 1× Max Ammo (have 1 of 2); Next — Overload: add 1× Charge Speed (have 1 of 2); Next — Reset Attributes: 1× Charge Speed below 4.04%
 
-- **Cube: Healing** — Prydwen’s go-to. Her job is to tank in P1/P2 and heal herself back up. _(backup: Vigor)_
-- **Overload:** 4× Charge Speed. Filler: ATK, Elemental Damage. **Avoid:** Max Ammo: she must reload to refresh her Max HP buff and self-heal
-- **Skills (PvP):** 1/4/4 → 4/4/7 (→ 7/7/10)
-- **Doll:** Damage Reduction. Her doll also boosts her team Max HP buff, which feeds Cinderella
-- Source: https://prydwen.gg/nikke/characters/noise
+### P5 · Anis (B?, iron, RL, PvP 8/10)
 
-### P2 · Crown (B2, iron, MG, Defender, PvP 5/10)
+| | Target | Now |
+|---|---|---|
+| Arena cube | Quantum | Quantum 6 |
+| Skills (PvP) | 1/1/1 | 4/4/4 |
+| Overload | 4× Charge Speed | 0× Charge Speed |
+| Doll | — | SR Phase 5 |
 
-- **Cube: Resilience** — Prydwen: “Always use Resilience cube on Crown” because she buffs her own reload. She’s a PvE staple, so don’t swap her cube for a throwaway team. _(backup: Vigor)_
-- **Overload:** 2× Max Ammo, 4× Elemental Damage, 4× ATK. Filler: Crit Rate, Crit Damage, Max Ammo
-- **Skills (PvP):** 4/4/4 → 7/4/7 → 10/4/10
-- **Notes:** Her ATK buff only hits units that use their Burst.
-- Source: https://prydwen.gg/nikke/characters/crown
+Next: Later — Overload: add 4× Charge Speed (have 0 of 4); Next — Enhance all 4 Overload pieces from level 0 to 5
 
-### P3 · Rapi: Red Hood (B3, fire, MG, Attacker, PvP 5/10)
+## Attack 1: SGD pierce
 
-- **Cube: Resilience** — Crown is in this team and gives Reload Speed. Prydwen says Resilience is the better choice in Crown comps. Reload just before Full Burst. _(backup: Bastion)_
-- **Overload:** 4× Elemental Damage, 4× ATK, 2–3× Max Ammo (very important for her)
-- **Skills (PvP):** 4/4/4 → 4/4/4 → 7/7/7 (→ 10/10/10)
-- **Notes:** Her whole-screen AoE wrecks teams with many Electric and Wind units.
-- Source: https://prydwen.gg/nikke/characters/rapi-red-hood
+Send at fast teams that rely on Noah’s 3-second immunity. Avoid lifesteal stalls and Water nukers.
 
-### P4 · Marian: Queen (B3, fire, MG, Attacker, PvP 8/10)
+### P1 · Blanc (B2, wind, AR, PvP 10/10)
 
-- **Cube: Bastion** — The only damage cube on her PvP list. An MG wants to keep firing without reloading. _(backup: Tempering)_
-- **Overload:** 4× Elemental Damage, 4× ATK, 1–4× Max Ammo. Filler: Crit Rate, Crit Damage
-- **Skills (PvP):** 4/4/4 → 4/4/4 → 7/7/7 (→ 10/10/10) · max Skill 2 and Burst for PvP
-- **Notes:** She can break strong stalls like Moran + Biscuit + Helm, so she’s more than a throwaway.
-- Source: https://prydwen.gg/nikke/characters/marian-queen
+| | Target | Now |
+|---|---|---|
+| Arena cube | Vigor | Vigor 6 |
+| Skills (PvP) | 4/4/10 | 4/5/10 |
+| Overload | CP padding only | — |
+| Doll | Damage Reduction: she sits in P1 | SR Phase 5 |
 
-### P5 · Little Mermaid (Siren) (B1, wind, SMG, Supporter, PvP 8/10)
+Next: Next — Level her doll (SR Phase 5) for Damage Reduction: she’s on the front line
 
-- **Cube: Tempering** — She stuns the enemy P1 and Prydwen says she may need Damage Reduction. Tempering is her first PvP pick. _(backup: Bastion)_
-- **Overload:** 4× Elemental Damage, 4× ATK. Filler: 4× Crit Rate, 4× Crit Damage, 4× Max Ammo
-- **Skills (PvP):** 4/4/4 → 4/4/4 → 7/7/7 (→ 10/10/7)
-- **Doll:** Damage Reduction
-- Source: https://prydwen.gg/nikke/characters/siren
+### P2 · Scarlet: Goddeath (B3, fire, AR, PvP 10/10)
+
+| | Target | Now |
+|---|---|---|
+| Arena cube | Tempering | Tempering 6 |
+| Skills (PvP) | 7/7/7 | 10/10/10 |
+| Overload | 4× Elemental Dmg, 4× ATK | 1+3 low× Elemental Dmg, 0+1 low× ATK |
+| Doll | Damage Reduction | SR Phase 15 |
+
+Next: **Now** — Reset Attributes: 3× Elemental Dmg below 19.35%; **Now** — Overload: add 3× ATK (have 1 of 4); **Now** — Reset Attributes: 1× ATK below 9.7%
+
+### P3 · Grave (B2, fire, AR, PvP 3/10)
+
+| | Target | Now |
+|---|---|---|
+| Arena cube | Vigor | Vigor 6 |
+| Skills (PvP) | 4/4/10 | 4/7/10 |
+| Overload | 4× Elemental Dmg, 4× ATK, 4× Crit Damage | 0× Elemental Dmg, 1× ATK, 2× Crit Damage |
+| Doll | Damage Reduction | SR Phase 5 |
+
+Next: Later — Overload: add 4× Elemental Dmg (have 0 of 4); Later — Overload: add 3× ATK (have 1 of 4); Later — Overload: add 2× Crit Damage (have 2 of 4); Next — Enhance all 4 Overload pieces from level 0 to 5
+
+### P4 · Helm (Treasure) (B3, water, SR, PvP 10/10)
+
+| | Target | Now |
+|---|---|---|
+| Arena cube | Quantum | Quantum 6 |
+| Skills (PvP) | 10/7/7 | 10/10/10 |
+| Overload | 4× Elemental Dmg, 4× ATK | 1+1 low× Elemental Dmg, 1× ATK |
+| Doll | — | Treasure Phase 3 |
+
+Next: Next — Overload: add 2× Elemental Dmg (have 2 of 4); Next — Reset Attributes: 1× Elemental Dmg below 19.35%; Next — Overload: add 3× ATK (have 1 of 4)
+
+### P5 · Jackal (B1, iron, RL, PvP 10/10)
+
+| | Target | Now |
+|---|---|---|
+| Arena cube | Quantum | Quantum 6 |
+| Skills (PvP) | 4/4/4 | 4/4/4 |
+| Overload | 4× Charge Speed | 1× Charge Speed |
+| Doll | Damage Reduction | SR Phase 15 |
+
+Next: Later — Overload: add 3× Charge Speed (have 1 of 4)
+
+## Attack 2: SBS counter
+
+Send at the team without Biscuit + a Defender, and without Sakura.
+
+### P1 · Noah (B2, wind, RL, PvP 10/10)
+
+| | Target | Now |
+|---|---|---|
+| Arena cube | Adjutant | Adjutant 6 |
+| Skills (PvP) | 4/4/4 | 4/4/4 |
+| Overload | 4× Charge Speed | 1× Charge Speed |
+| Doll | Damage Reduction: she sits in P1/P2 | SR Phase 15 |
+
+Next: Later — Overload: add 3× Charge Speed (have 1 of 4)
+
+### P2 · Biscuit (B2, electric, RL, PvP 10/10)
+
+| | Target | Now |
+|---|---|---|
+| Arena cube | Adjutant | Adjutant 6 |
+| Skills (PvP) | 4/4/7 | 4/4/10 |
+| Overload | 4× Elemental Dmg, 4× ATK, 2× Charge Speed | 3× Elemental Dmg, 1× ATK, 0× Charge Speed |
+| Doll | — | SR Phase 6 |
+
+Next: Later — Overload: add 1× Elemental Dmg (have 3 of 4); Later — Overload: add 3× ATK (have 1 of 4); Later — Overload: add 2× Charge Speed (have 0 of 2)
+
+### P3 · Scarlet: Black Shadow (B3, wind, RL, PvP 9/10)
+
+| | Target | Now |
+|---|---|---|
+| Arena cube | Resilience | Resilience 15 |
+| Skills (PvP) | 10/7/10 | 10/7/10 |
+| Overload | 4× Elemental Dmg, 4× ATK, 1× Max Ammo, 1× Charge Speed | 0× Elemental Dmg, 1+1 low× ATK, 0× Max Ammo, 0× Charge Speed |
+| Doll | Damage Reduction | SR Phase 15 |
+
+Next: **Now** — Overload: add 4× Elemental Dmg (have 0 of 4); **Now** — Overload: add 2× ATK (have 2 of 4); **Now** — Reset Attributes: 1× ATK below 9.7%; **Now** — Overload: add 1× Max Ammo (have 0 of 1); **Now** — Overload: add 1× Charge Speed (have 0 of 1)
+
+### P4 · Rapunzel (B1, iron, RL, PvP 8/10)
+
+| | Target | Now |
+|---|---|---|
+| Arena cube | Healing | Healing 6 |
+| Skills (PvP) | 4/4/4 | 7/4/4 |
+| Overload | 4× Charge Speed | 0× Charge Speed |
+| Doll | — | SR Phase 5 |
+
+Next: Later — Overload: add 4× Charge Speed (have 0 of 4); Next — Enhance all 4 Overload pieces from level 0 to 5
+
+### P5 · Rumani (B1, fire, RL, PvP 8/10)
+
+| | Target | Now |
+|---|---|---|
+| Arena cube | Quantum | Quantum 6 |
+| Skills (PvP) | 4/4/4 | 4/4/4 |
+| Overload | 4× Charge Speed | 1× Charge Speed |
+| Doll | — | SR Phase 5 |
+
+Next: Later — Overload: add 3× Charge Speed (have 1 of 4); Next — Enhance all 4 Overload pieces from level 0 to 5
+
+## Attack 3: Anti-stall
+
+Send at lifesteal stalls (Moran + Biscuit + Helm) and Electric/Wind-heavy teams. Moran replaces Noise in P1.
+
+### P1 · Moran (Treasure) (B1, electric, AR, PvP 10/10)
+
+| | Target | Now |
+|---|---|---|
+| Arena cube | Tempering | Vigor 6 |
+| Skills (PvP) | 4/7/7 | 10/10/10 |
+| Overload | 4× Elemental Dmg, 4× ATK | 1× Elemental Dmg, 1× ATK |
+| Doll | — | Treasure Phase 3 |
+
+Next: **Now** — Arena cube: swap Vigor → Tempering; Next — Overload: add 3× Elemental Dmg (have 1 of 4); Next — Overload: add 3× ATK (have 1 of 4)
+
+### P2 · Crown (B2, iron, MG, PvP 5/10)
+
+| | Target | Now |
+|---|---|---|
+| Arena cube | Resilience | Resilience 15 |
+| Skills (PvP) | 10/4/10 | 10/10/10 |
+| Overload | 4× Elemental Dmg, 4× ATK, 2× Max Ammo | 0× Elemental Dmg, 3+1 low× ATK, 4× Max Ammo |
+| Doll | — | SR Phase 15 |
+
+Next: Later — Overload: add 4× Elemental Dmg (have 0 of 4); Later — Reset Attributes: 1× ATK below 9.7%
+
+### P3 · Rapi: Red Hood (B3, fire, MG, PvP 5/10)
+
+| | Target | Now |
+|---|---|---|
+| Arena cube | Resilience | Resilience 15 |
+| Skills (PvP) | 7/7/7 | 10/10/10 |
+| Overload | 4× Elemental Dmg, 4× ATK, 2× Max Ammo | 1+1 low× Elemental Dmg, 1× ATK, 3× Max Ammo |
+| Doll | — | SR Phase 15 |
+
+Next: Next — Overload: add 2× Elemental Dmg (have 2 of 4); Next — Reset Attributes: 1× Elemental Dmg below 19.35%; Next — Overload: add 3× ATK (have 1 of 4)
+
+### P4 · Marian: Queen (B3, fire, MG, PvP 8/10)
+
+| | Target | Now |
+|---|---|---|
+| Arena cube | Bastion | Bastion 13 |
+| Skills (PvP) | 7/7/7 | 10/10/10 |
+| Overload | 4× Elemental Dmg, 4× ATK, 1× Max Ammo | 0+1 low× Elemental Dmg, 0+1 low× ATK, 1+1 low× Max Ammo |
+| Doll | — | SR Phase 15 |
+
+Next: Next — Overload: add 3× Elemental Dmg (have 1 of 4); Next — Reset Attributes: 1× Elemental Dmg below 19.35%; Next — Overload: add 3× ATK (have 1 of 4); Next — Reset Attributes: 1× ATK below 9.7%
+
+### P5 · Little Mermaid (B1, wind, SMG, PvP 8/10)
+
+| | Target | Now |
+|---|---|---|
+| Arena cube | Tempering | Tempering 6 |
+| Skills (PvP) | 7/7/7 | 10/10/10 |
+| Overload | 4× Elemental Dmg, 4× ATK | 1+2 low× Elemental Dmg, 0+1 low× ATK |
+| Doll | Damage Reduction | SR Phase 15 |
+
+Next: Later — Overload: add 1× Elemental Dmg (have 3 of 4); Later — Reset Attributes: 2× Elemental Dmg below 19.35%; Later — Overload: add 3× ATK (have 1 of 4); Later — Reset Attributes: 1× ATK below 9.7%
