@@ -24,4 +24,4 @@ Current rank: Diamond 5 (Special Arena).
 
 ## Gear progress
 
-- 2026-11-20 · Scarlet: Goddeath Overload piece (Lv 5): reroll offered, from Elemental Damage 23.56% / – / – to ATK 5.47% + Elemental Damage 22.15% / –. Recommended taking the new roll (two target lines beat one). ATK value is low; third line still open.
+- 2026-11-20 · Scarlet: Goddeath Overload piece (Lv 5): reroll offered, from Elemental Damage 23.56% / – / – to ATK 5.47% + Elemental Damage 22.15% / –. Recommended taking the new roll (two target lines beat one). ATK value is low. Third line target: Crit Damage (a piece cannot roll the same effect twice, so the other ATK/Elemental Damage lines come from the other 3 pieces).
