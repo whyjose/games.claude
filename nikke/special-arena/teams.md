@@ -36,6 +36,20 @@ From Prydwen's Scarlet: Goddeath review, checked 2026-11-20:
 - She can randomly ignore taunt and hit P5, so results vs taunters vary.
 - Strong point: Fire is not weak to Electric, the most common PvP element.
 
+## Counter table: which attack team NOT to send
+
+Checked 2026-11-20 (Prydwen character pages; element cycle Fire > Wind > Iron > Electric > Water > Fire).
+
+| Enemy team has | Don't send | Send instead |
+|---|---|---|
+| Biscuit + a Defender | Attack 2 (SBS) | Attack 1, or swap SBS → Cinderella |
+| Sakura | Attack 2 (SBS) | Attack 1 or 3 |
+| Moran (Treasure) + Helm lifesteal stall | Attack 1 (SGD) | Attack 3: Marian: Queen breaks this stall |
+| Fire nuker (SGD, Marian: Queen, Rapi: Red Hood, Scarlet) | Attack 2 (Noah, SBS are Wind) | Attack 1 or 3 |
+| Water nuker | Attack 1 / 3 (two Fire units each) | Attack 2 |
+| Noah as their main protection | — | Attack 1 (SGD keeps hitting after the 3 s immunity) |
+| Lots of Electric and Wind units | — | Attack 3 (Rapi: Red Hood whole-screen AoE) |
+
 ## Origin
 
 Started from an AI-written recommendation built around Scarlet: Goddeath and Scarlet: Black Shadow. Checked against Prydwen on 2026-11-20:
