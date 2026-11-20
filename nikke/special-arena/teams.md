@@ -26,6 +26,16 @@ Set on 2026-11-20. Defense CP 3,483,229 · Attack CP 3,400,497.
 
 To do: in-game, Attack Round 3 had Noise in P5. Move her to P1 so she absorbs the opening nuke.
 
+## Matchups: SGD team (Defense 1 / Attack 1)
+
+From Prydwen's Scarlet: Goddeath review, checked 2026-11-20:
+
+- **Avoid:** heavy lifesteal stalls, e.g. Moran (Treasure) + Helm. Her damage is spread over her Burst, not one big hit, so strong lifesteal can outheal it (depends on investment).
+- **Avoid:** Water-heavy teams. Fire takes extra damage from Water (Grave and SGD are Fire).
+- **Hunt:** teams relying on Noah's short immunity (her damage keeps going after it ends), and Wind-heavy teams (Fire advantage).
+- She can randomly ignore taunt and hit P5, so results vs taunters vary.
+- Strong point: Fire is not weak to Electric, the most common PvP element.
+
 ## Origin
 
 Started from an AI-written recommendation built around Scarlet: Goddeath and Scarlet: Black Shadow. Checked against Prydwen on 2026-11-20:
