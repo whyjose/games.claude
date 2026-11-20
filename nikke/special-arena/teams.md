@@ -14,7 +14,7 @@ Set on 2026-11-20. Defense CP 3,483,229 · Attack CP 3,400,497.
 |---|---|---|---|---|---|
 | 1. SGD Pierce | Blanc (B2) | Scarlet: Goddeath (B3) | Grave (B2) | Helm, Favorite Item (B3) | Jackal (B1) |
 | 2. Stall | Noah (B2) | Noise (B1) | Cinderella (B3) | Biscuit (B2) | Rumani (B1) |
-| 3. SBS Nuke | Moran (B1) | Bay (B2) | Scarlet: Black Shadow (B3) | Alice (B3) | Anis? (shows B1 Electric — to confirm) |
+| 3. SBS Nuke | Moran (Treasure) (B1) | Bay (Treasure) (B2) | Scarlet: Black Shadow (B3) | Alice (B3) | Anis? (shows B1 Electric — to confirm) |
 
 ## Attack
 

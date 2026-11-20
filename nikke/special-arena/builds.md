@@ -90,21 +90,21 @@ Interactive version: [builds.html](builds.html) · https://claude.ai/artifact/D4
 
 ## SBS Nuke — Defense Squad 3
 
-### P1 · Moran (B1, electric, AR, Defender, PvP 10/10)
+### P1 · Moran (Treasure) (B1, electric, AR, Defender, PvP 10/10)
 
-- **Cube: Tempering** — Prydwen: her “kit relies on Damage Reduction stacking” and “may require Tempering Cube”. _(backup: Vigor)_
-- **Overload:** None needed: CP padding only
-- **Skills (PvP):** 1/1/1 → 4/4/4 → 4/7/7 (→ 4/7/10)
-- **Doll:** Damage Reduction
-- Source: https://prydwen.gg/nikke/characters/moran
+- **Cube: Tempering** — Prydwen’s first PvP pick for her: her kit stacks Damage Reduction. You have Tempering on her Battle slot but Vigor on Arena: swap. _(backup: Vigor)_
+- **Overload:** 4× Elemental Damage, 4× ATK. Filler: Crit Damage, Crit Rate, DEF
+- **Skills (PvP):** 4/4/4 → 4/4/4 → 4/7/7 (→ 10/10/10) · Burst first in PvP (Damage Reduction)
+- **Notes:** Prydwen: “must-have, must-build PvP unit”. With Helm (Treasure) she forms the lifesteal stall that SGD teams struggle against.
+- Source: https://prydwen.gg/nikke/characters/moran-treasure
 
-### P2 · Bay (B2, fire, RL, Defender, PvP 6/10)
+### P2 · Bay (Treasure) (B2, fire, RL, Defender, PvP 7/10)
 
-- **Cube: Vigor** — Prydwen calls it “the only cube for her”: she shares damage, so more Max HP means more soak. _(backup: Tempering)_
+- **Cube: Vigor** — She shares damage, so more Max HP means more soak. Prydwen lists Vigor first for PvP. _(backup: Tempering)_
 - **Overload:** 4× Charge Speed. Filler: ATK, Elemental Damage, DEF
-- **Skills (PvP):** 1/1/1 → 4/4/4
+- **Skills (PvP):** 1/1/1 → 4/4/4 → 7/4/4
 - **Doll:** Damage Reduction
-- Source: https://prydwen.gg/nikke/characters/bay
+- Source: https://prydwen.gg/nikke/characters/bay-treasure
 
 ### P3 · Scarlet: Black Shadow (B3, wind, RL, Attacker, PvP 9/10)
 

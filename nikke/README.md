@@ -6,6 +6,7 @@ Current rank: Diamond 5 (Special Arena).
 
 - [Special Arena teams](special-arena/teams.md): current defense and attack lineups, and the reasoning behind them.
 - [Unit builds](special-arena/builds.md): cube, Overload lines, skill levels and notes for every unit in those teams.
+- [Roster audit](roster-audit.md): each arena unit's real skills, cubes, dolls and Overload vs the target build (from ShiftyPad).
 - [Overload rerolling](overload.md): costs, minimum values and when to stop.
 - [Interactive builds page](special-arena/builds.html): the same builds as a page with team tabs and search. Live version: https://claude.ai/artifact/D4MqEfDZE4GaZykHfAyedW
 
